@@ -1,0 +1,17 @@
+[8.412s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image
+[9.879s] running develop
+[10.719s] running egg_info
+[10.721s] writing ros2_save_camera_image.egg-info/PKG-INFO
+[10.724s] writing dependency_links to ros2_save_camera_image.egg-info/dependency_links.txt
+[10.734s] writing entry points to ros2_save_camera_image.egg-info/entry_points.txt
+[10.738s] writing requirements to ros2_save_camera_image.egg-info/requires.txt
+[10.739s] writing top-level names to ros2_save_camera_image.egg-info/top_level.txt
+[10.762s] reading manifest file 'ros2_save_camera_image.egg-info/SOURCES.txt'
+[10.770s] writing manifest file 'ros2_save_camera_image.egg-info/SOURCES.txt'
+[11.005s] running build_ext
+[11.013s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages/ros2-save-camera-image.egg-link (link to .)
+[11.014s] Installing execute script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/ros2_save_camera_image
+[11.016s] 
+[11.017s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image
+[11.018s] running install_data
+[11.180s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image

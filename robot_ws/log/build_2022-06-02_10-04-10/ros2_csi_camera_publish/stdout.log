@@ -1,0 +1,23 @@
+running develop
+running egg_info
+creating ros2_csi_camera_publish.egg-info
+writing ros2_csi_camera_publish.egg-info/PKG-INFO
+writing dependency_links to ros2_csi_camera_publish.egg-info/dependency_links.txt
+writing entry points to ros2_csi_camera_publish.egg-info/entry_points.txt
+writing requirements to ros2_csi_camera_publish.egg-info/requires.txt
+writing top-level names to ros2_csi_camera_publish.egg-info/top_level.txt
+writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+reading manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages/ros2-csi-camera-publish.egg-link (link to .)
+Installing jetson script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/ros2_csi_camera_publish
+
+Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish
+running install_data
+creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index
+creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index
+creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index/packages
+copying resource/ros2_csi_camera_publish -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index/packages
+copying package.xml -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish
+copying settings.json -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish

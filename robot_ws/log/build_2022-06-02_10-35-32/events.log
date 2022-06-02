@@ -1,0 +1,348 @@
+[0.000000] (-) TimerEvent: {}
+[0.002429] (ros2_csi_camera_publish) JobQueued: {'identifier': 'ros2_csi_camera_publish', 'dependencies': OrderedDict()}
+[0.002610] (ros2_deep_learning_to_twist_message) JobQueued: {'identifier': 'ros2_deep_learning_to_twist_message', 'dependencies': OrderedDict()}
+[0.002734] (ros2_gamepad_to_twist_message) JobQueued: {'identifier': 'ros2_gamepad_to_twist_message', 'dependencies': OrderedDict()}
+[0.002842] (ros2_save_camera_image) JobQueued: {'identifier': 'ros2_save_camera_image', 'dependencies': OrderedDict()}
+[0.004219] (ros2_twist_message_to_robot_motion) JobQueued: {'identifier': 'ros2_twist_message_to_robot_motion', 'dependencies': OrderedDict()}
+[0.004454] (robot_app) JobQueued: {'identifier': 'robot_app', 'dependencies': OrderedDict([('ros2_csi_camera_publish', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish'), ('ros2_deep_learning_to_twist_message', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message'), ('ros2_gamepad_to_twist_message', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message'), ('ros2_save_camera_image', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image'), ('ros2_twist_message_to_robot_motion', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion')])}
+[0.004720] (ros2_csi_camera_publish) JobStarted: {'identifier': 'ros2_csi_camera_publish'}
+[0.073582] (ros2_deep_learning_to_twist_message) JobStarted: {'identifier': 'ros2_deep_learning_to_twist_message'}
+[0.095962] (-) TimerEvent: {}
+[0.135442] (ros2_gamepad_to_twist_message) JobStarted: {'identifier': 'ros2_gamepad_to_twist_message'}
+[0.194299] (ros2_save_camera_image) JobStarted: {'identifier': 'ros2_save_camera_image'}
+[0.200029] (-) TimerEvent: {}
+[0.301623] (-) TimerEvent: {}
+[0.402560] (-) TimerEvent: {}
+[0.503273] (-) TimerEvent: {}
+[0.604493] (-) TimerEvent: {}
+[0.705227] (-) TimerEvent: {}
+[0.806030] (-) TimerEvent: {}
+[0.906731] (-) TimerEvent: {}
+[1.007467] (-) TimerEvent: {}
+[1.108867] (-) TimerEvent: {}
+[1.210261] (-) TimerEvent: {}
+[1.311414] (-) TimerEvent: {}
+[1.412654] (-) TimerEvent: {}
+[1.513561] (-) TimerEvent: {}
+[1.614731] (-) TimerEvent: {}
+[1.715482] (-) TimerEvent: {}
+[1.816451] (-) TimerEvent: {}
+[1.917562] (-) TimerEvent: {}
+[2.018367] (-) TimerEvent: {}
+[2.119538] (-) TimerEvent: {}
+[2.220837] (-) TimerEvent: {}
+[2.321625] (-) TimerEvent: {}
+[2.422768] (-) TimerEvent: {}
+[2.523976] (-) TimerEvent: {}
+[2.625158] (-) TimerEvent: {}
+[2.726418] (-) TimerEvent: {}
+[2.827179] (-) TimerEvent: {}
+[2.928052] (-) TimerEvent: {}
+[3.028846] (-) TimerEvent: {}
+[3.129615] (-) TimerEvent: {}
+[3.230849] (-) TimerEvent: {}
+[3.332892] (-) TimerEvent: {}
+[3.434993] (-) TimerEvent: {}
+[3.536046] (-) TimerEvent: {}
+[3.636805] (-) TimerEvent: {}
+[3.738188] (-) TimerEvent: {}
+[3.839387] (-) TimerEvent: {}
+[3.940588] (-) TimerEvent: {}
+[4.041832] (-) TimerEvent: {}
+[4.142993] (-) TimerEvent: {}
+[4.244247] (-) TimerEvent: {}
+[4.345485] (-) TimerEvent: {}
+[4.446165] (-) TimerEvent: {}
+[4.546892] (-) TimerEvent: {}
+[4.647656] (-) TimerEvent: {}
+[4.748360] (-) TimerEvent: {}
+[4.849125] (-) TimerEvent: {}
+[4.950072] (-) TimerEvent: {}
+[5.051023] (-) TimerEvent: {}
+[5.151807] (-) TimerEvent: {}
+[5.253018] (-) TimerEvent: {}
+[5.353744] (-) TimerEvent: {}
+[5.454429] (-) TimerEvent: {}
+[5.555648] (-) TimerEvent: {}
+[5.656411] (-) TimerEvent: {}
+[5.757227] (-) TimerEvent: {}
+[5.858016] (-) TimerEvent: {}
+[5.958726] (-) TimerEvent: {}
+[6.059418] (-) TimerEvent: {}
+[6.160208] (-) TimerEvent: {}
+[6.260972] (-) TimerEvent: {}
+[6.361850] (-) TimerEvent: {}
+[6.463209] (-) TimerEvent: {}
+[6.564366] (-) TimerEvent: {}
+[6.665560] (-) TimerEvent: {}
+[6.766709] (-) TimerEvent: {}
+[6.867843] (-) TimerEvent: {}
+[6.968949] (-) TimerEvent: {}
+[7.070112] (-) TimerEvent: {}
+[7.171211] (-) TimerEvent: {}
+[7.272331] (-) TimerEvent: {}
+[7.373532] (-) TimerEvent: {}
+[7.481574] (-) TimerEvent: {}
+[7.582717] (-) TimerEvent: {}
+[7.683859] (-) TimerEvent: {}
+[7.784998] (-) TimerEvent: {}
+[7.886156] (-) TimerEvent: {}
+[7.987346] (-) TimerEvent: {}
+[8.088540] (-) TimerEvent: {}
+[8.189723] (-) TimerEvent: {}
+[8.291000] (-) TimerEvent: {}
+[8.392335] (-) TimerEvent: {}
+[8.405269] (ros2_csi_camera_publish) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[8.446139] (ros2_gamepad_to_twist_message) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[8.493530] (-) TimerEvent: {}
+[8.548274] (ros2_deep_learning_to_twist_message) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[8.593922] (-) TimerEvent: {}
+[8.605229] (ros2_save_camera_image) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[8.694137] (-) TimerEvent: {}
+[8.795272] (-) TimerEvent: {}
+[8.896443] (-) TimerEvent: {}
+[8.997552] (-) TimerEvent: {}
+[9.098649] (-) TimerEvent: {}
+[9.199812] (-) TimerEvent: {}
+[9.300927] (-) TimerEvent: {}
+[9.402051] (-) TimerEvent: {}
+[9.503161] (-) TimerEvent: {}
+[9.604291] (-) TimerEvent: {}
+[9.705442] (-) TimerEvent: {}
+[9.806570] (-) TimerEvent: {}
+[9.860461] (ros2_csi_camera_publish) StdoutLine: {'line': b'running develop\n'}
+[9.905689] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'running develop\n'}
+[9.906695] (-) TimerEvent: {}
+[10.007382] (-) TimerEvent: {}
+[10.048066] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'running develop\n'}
+[10.073705] (ros2_save_camera_image) StdoutLine: {'line': b'running develop\n'}
+[10.107555] (-) TimerEvent: {}
+[10.208685] (-) TimerEvent: {}
+[10.309869] (-) TimerEvent: {}
+[10.411009] (-) TimerEvent: {}
+[10.512115] (-) TimerEvent: {}
+[10.613212] (-) TimerEvent: {}
+[10.714370] (-) TimerEvent: {}
+[10.717518] (ros2_csi_camera_publish) StdoutLine: {'line': b'running egg_info\n'}
+[10.719128] (ros2_csi_camera_publish) StdoutLine: {'line': b'writing ros2_csi_camera_publish.egg-info/PKG-INFO\n'}
+[10.720896] (ros2_csi_camera_publish) StdoutLine: {'line': b'writing dependency_links to ros2_csi_camera_publish.egg-info/dependency_links.txt\n'}
+[10.722434] (ros2_csi_camera_publish) StdoutLine: {'line': b'writing entry points to ros2_csi_camera_publish.egg-info/entry_points.txt\n'}
+[10.723758] (ros2_csi_camera_publish) StdoutLine: {'line': b'writing requirements to ros2_csi_camera_publish.egg-info/requires.txt\n'}
+[10.725067] (ros2_csi_camera_publish) StdoutLine: {'line': b'writing top-level names to ros2_csi_camera_publish.egg-info/top_level.txt\n'}
+[10.737585] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'running egg_info\n'}
+[10.738501] (ros2_csi_camera_publish) StdoutLine: {'line': b"reading manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'\n"}
+[10.739369] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'writing ros2_gamepad_to_twist_message.egg-info/PKG-INFO\n'}
+[10.740280] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'writing dependency_links to ros2_gamepad_to_twist_message.egg-info/dependency_links.txt\n'}
+[10.741055] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'writing entry points to ros2_gamepad_to_twist_message.egg-info/entry_points.txt\n'}
+[10.742009] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'writing requirements to ros2_gamepad_to_twist_message.egg-info/requires.txt\n'}
+[10.742443] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'writing top-level names to ros2_gamepad_to_twist_message.egg-info/top_level.txt\n'}
+[10.743290] (ros2_csi_camera_publish) StdoutLine: {'line': b"writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'\n"}
+[10.753483] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b"reading manifest file 'ros2_gamepad_to_twist_message.egg-info/SOURCES.txt'\n"}
+[10.756972] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b"writing manifest file 'ros2_gamepad_to_twist_message.egg-info/SOURCES.txt'\n"}
+[10.814539] (-) TimerEvent: {}
+[10.913387] (ros2_save_camera_image) StdoutLine: {'line': b'running egg_info\n'}
+[10.914679] (-) TimerEvent: {}
+[10.916227] (ros2_save_camera_image) StdoutLine: {'line': b'writing ros2_save_camera_image.egg-info/PKG-INFO\n'}
+[10.918472] (ros2_save_camera_image) StdoutLine: {'line': b'writing dependency_links to ros2_save_camera_image.egg-info/dependency_links.txt\n'}
+[10.919547] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'running egg_info\n'}
+[10.920877] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'writing ros2_deep_learning_to_twist_message.egg-info/PKG-INFO\n'}
+[10.922599] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'writing dependency_links to ros2_deep_learning_to_twist_message.egg-info/dependency_links.txt\n'}
+[10.923809] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'writing entry points to ros2_deep_learning_to_twist_message.egg-info/entry_points.txt\n'}
+[10.924744] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'writing requirements to ros2_deep_learning_to_twist_message.egg-info/requires.txt\n'}
+[10.925789] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'writing top-level names to ros2_deep_learning_to_twist_message.egg-info/top_level.txt\n'}
+[10.928248] (ros2_save_camera_image) StdoutLine: {'line': b'writing entry points to ros2_save_camera_image.egg-info/entry_points.txt\n'}
+[10.930371] (ros2_csi_camera_publish) StdoutLine: {'line': b'running build_ext\n'}
+[10.931822] (ros2_csi_camera_publish) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages/ros2-csi-camera-publish.egg-link (link to .)\n'}
+[10.932678] (ros2_save_camera_image) StdoutLine: {'line': b'writing requirements to ros2_save_camera_image.egg-info/requires.txt\n'}
+[10.933958] (ros2_save_camera_image) StdoutLine: {'line': b'writing top-level names to ros2_save_camera_image.egg-info/top_level.txt\n'}
+[10.938182] (ros2_csi_camera_publish) StdoutLine: {'line': b'Installing jetson script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/ros2_csi_camera_publish\n'}
+[10.938905] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b"reading manifest file 'ros2_deep_learning_to_twist_message.egg-info/SOURCES.txt'\n"}
+[10.939422] (ros2_csi_camera_publish) StdoutLine: {'line': b'\n'}
+[10.939872] (ros2_csi_camera_publish) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish\n'}
+[10.940298] (ros2_csi_camera_publish) StdoutLine: {'line': b'running install_data\n'}
+[10.940922] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b"writing manifest file 'ros2_deep_learning_to_twist_message.egg-info/SOURCES.txt'\n"}
+[10.949722] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'running build_ext\n'}
+[10.950684] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages/ros2-gamepad-to-twist-message.egg-link (link to .)\n'}
+[10.955221] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'Installing logitech script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/ros2_gamepad_to_twist_message\n'}
+[10.956535] (ros2_save_camera_image) StdoutLine: {'line': b"reading manifest file 'ros2_save_camera_image.egg-info/SOURCES.txt'\n"}
+[10.957202] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'Installing waveshare script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/ros2_gamepad_to_twist_message\n'}
+[10.958551] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'\n'}
+[10.959341] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message\n'}
+[10.960106] (ros2_gamepad_to_twist_message) StdoutLine: {'line': b'running install_data\n'}
+[10.964721] (ros2_save_camera_image) StdoutLine: {'line': b"writing manifest file 'ros2_save_camera_image.egg-info/SOURCES.txt'\n"}
+[11.014894] (-) TimerEvent: {}
+[11.089665] (ros2_csi_camera_publish) CommandEnded: {'returncode': 0}
+[11.115208] (-) TimerEvent: {}
+[11.157880] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'running build_ext\n'}
+[11.159189] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages/ros2-deep-learning-to-twist-message.egg-link (link to .)\n'}
+[11.162995] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'Installing onnx script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/ros2_deep_learning_to_twist_message\n'}
+[11.164030] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'\n'}
+[11.167688] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message\n'}
+[11.169588] (ros2_deep_learning_to_twist_message) StdoutLine: {'line': b'running install_data\n'}
+[11.171163] (ros2_csi_camera_publish) JobEnded: {'identifier': 'ros2_csi_camera_publish', 'rc': 0}
+[11.196919] (ros2_twist_message_to_robot_motion) JobStarted: {'identifier': 'ros2_twist_message_to_robot_motion'}
+[11.198317] (ros2_save_camera_image) StdoutLine: {'line': b'running build_ext\n'}
+[11.200157] (ros2_save_camera_image) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages/ros2-save-camera-image.egg-link (link to .)\n'}
+[11.208595] (ros2_save_camera_image) StdoutLine: {'line': b'Installing execute script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/ros2_save_camera_image\n'}
+[11.210005] (ros2_save_camera_image) StdoutLine: {'line': b'\n'}
+[11.211241] (ros2_save_camera_image) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image\n'}
+[11.212555] (ros2_save_camera_image) StdoutLine: {'line': b'running install_data\n'}
+[11.215825] (-) TimerEvent: {}
+[11.273886] (ros2_gamepad_to_twist_message) CommandEnded: {'returncode': 0}
+[11.316481] (-) TimerEvent: {}
+[11.323742] (ros2_gamepad_to_twist_message) JobEnded: {'identifier': 'ros2_gamepad_to_twist_message', 'rc': 0}
+[11.329101] (ros2_deep_learning_to_twist_message) CommandEnded: {'returncode': 0}
+[11.372091] (ros2_deep_learning_to_twist_message) JobEnded: {'identifier': 'ros2_deep_learning_to_twist_message', 'rc': 0}
+[11.374807] (ros2_save_camera_image) CommandEnded: {'returncode': 0}
+[11.414660] (ros2_save_camera_image) JobEnded: {'identifier': 'ros2_save_camera_image', 'rc': 0}
+[11.421778] (-) TimerEvent: {}
+[11.522800] (-) TimerEvent: {}
+[11.623523] (-) TimerEvent: {}
+[11.724301] (-) TimerEvent: {}
+[11.825041] (-) TimerEvent: {}
+[11.925756] (-) TimerEvent: {}
+[12.026432] (-) TimerEvent: {}
+[12.127168] (-) TimerEvent: {}
+[12.227919] (-) TimerEvent: {}
+[12.329040] (-) TimerEvent: {}
+[12.429986] (-) TimerEvent: {}
+[12.530660] (-) TimerEvent: {}
+[12.631390] (-) TimerEvent: {}
+[12.732175] (-) TimerEvent: {}
+[12.832981] (-) TimerEvent: {}
+[12.933933] (-) TimerEvent: {}
+[13.039034] (-) TimerEvent: {}
+[13.139726] (-) TimerEvent: {}
+[13.240500] (-) TimerEvent: {}
+[13.341273] (-) TimerEvent: {}
+[13.441938] (-) TimerEvent: {}
+[13.542650] (-) TimerEvent: {}
+[13.643788] (-) TimerEvent: {}
+[13.744456] (-) TimerEvent: {}
+[13.845335] (-) TimerEvent: {}
+[13.945993] (-) TimerEvent: {}
+[14.046721] (-) TimerEvent: {}
+[14.148084] (-) TimerEvent: {}
+[14.248843] (-) TimerEvent: {}
+[14.349541] (-) TimerEvent: {}
+[14.450157] (-) TimerEvent: {}
+[14.550759] (-) TimerEvent: {}
+[14.651357] (-) TimerEvent: {}
+[14.752031] (-) TimerEvent: {}
+[14.852722] (-) TimerEvent: {}
+[14.904547] (ros2_twist_message_to_robot_motion) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[14.952969] (-) TimerEvent: {}
+[15.053697] (-) TimerEvent: {}
+[15.154300] (-) TimerEvent: {}
+[15.254967] (-) TimerEvent: {}
+[15.355616] (-) TimerEvent: {}
+[15.456272] (-) TimerEvent: {}
+[15.556922] (-) TimerEvent: {}
+[15.657569] (-) TimerEvent: {}
+[15.758204] (-) TimerEvent: {}
+[15.858816] (-) TimerEvent: {}
+[15.959493] (-) TimerEvent: {}
+[16.060167] (-) TimerEvent: {}
+[16.135457] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'running develop\n'}
+[16.160371] (-) TimerEvent: {}
+[16.260989] (-) TimerEvent: {}
+[16.361635] (-) TimerEvent: {}
+[16.462229] (-) TimerEvent: {}
+[16.562885] (-) TimerEvent: {}
+[16.663473] (-) TimerEvent: {}
+[16.764108] (-) TimerEvent: {}
+[16.864712] (-) TimerEvent: {}
+[16.887820] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'running egg_info\n'}
+[16.888527] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'writing ros2_twist_message_to_robot_motion.egg-info/PKG-INFO\n'}
+[16.890490] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'writing dependency_links to ros2_twist_message_to_robot_motion.egg-info/dependency_links.txt\n'}
+[16.891082] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'writing entry points to ros2_twist_message_to_robot_motion.egg-info/entry_points.txt\n'}
+[16.891579] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'writing requirements to ros2_twist_message_to_robot_motion.egg-info/requires.txt\n'}
+[16.892038] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'writing top-level names to ros2_twist_message_to_robot_motion.egg-info/top_level.txt\n'}
+[16.901671] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b"reading manifest file 'ros2_twist_message_to_robot_motion.egg-info/SOURCES.txt'\n"}
+[16.904932] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b"writing manifest file 'ros2_twist_message_to_robot_motion.egg-info/SOURCES.txt'\n"}
+[16.964972] (-) TimerEvent: {}
+[17.061329] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'running build_ext\n'}
+[17.062162] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages/ros2-twist-message-to-robot-motion.egg-link (link to .)\n'}
+[17.065074] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'Installing adafruit script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/ros2_twist_message_to_robot_motion\n'}
+[17.065621] (-) TimerEvent: {}
+[17.066373] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'Installing jetbot script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/ros2_twist_message_to_robot_motion\n'}
+[17.067315] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'\n'}
+[17.068003] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion\n'}
+[17.069056] (ros2_twist_message_to_robot_motion) StdoutLine: {'line': b'running install_data\n'}
+[17.165875] (-) TimerEvent: {}
+[17.194471] (ros2_twist_message_to_robot_motion) CommandEnded: {'returncode': 0}
+[17.232432] (ros2_twist_message_to_robot_motion) JobEnded: {'identifier': 'ros2_twist_message_to_robot_motion', 'rc': 0}
+[17.238222] (robot_app) JobStarted: {'identifier': 'robot_app'}
+[17.266068] (-) TimerEvent: {}
+[17.366973] (-) TimerEvent: {}
+[17.468083] (-) TimerEvent: {}
+[17.568914] (-) TimerEvent: {}
+[17.669740] (-) TimerEvent: {}
+[17.770543] (-) TimerEvent: {}
+[17.871167] (-) TimerEvent: {}
+[17.971842] (-) TimerEvent: {}
+[18.072507] (-) TimerEvent: {}
+[18.173152] (-) TimerEvent: {}
+[18.273809] (-) TimerEvent: {}
+[18.374406] (-) TimerEvent: {}
+[18.475029] (-) TimerEvent: {}
+[18.575732] (-) TimerEvent: {}
+[18.676574] (-) TimerEvent: {}
+[18.777502] (-) TimerEvent: {}
+[18.878151] (-) TimerEvent: {}
+[18.978738] (-) TimerEvent: {}
+[19.080683] (-) TimerEvent: {}
+[19.181334] (-) TimerEvent: {}
+[19.281975] (-) TimerEvent: {}
+[19.382559] (-) TimerEvent: {}
+[19.483204] (-) TimerEvent: {}
+[19.583855] (-) TimerEvent: {}
+[19.684504] (-) TimerEvent: {}
+[19.785160] (-) TimerEvent: {}
+[19.885870] (-) TimerEvent: {}
+[19.986523] (-) TimerEvent: {}
+[20.087183] (-) TimerEvent: {}
+[20.187854] (-) TimerEvent: {}
+[20.288513] (-) TimerEvent: {}
+[20.389224] (-) TimerEvent: {}
+[20.462620] (robot_app) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--prefix', '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app', '--editable', '--build-directory', '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app/build', '--no-deps', 'install_data', '--install-dir', '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app'], 'cwd': '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app', 'env': {'JETSON_BOARD': 'P3449-0000', 'LESSOPEN': '| /usr/bin/lesspipe %s', 'JETSON_TYPE': 'Nano (Developer Kit Version)', 'USER': 'jetson', 'SSH_CLIENT': '192.168.2.18 55274 22', 'LC_TIME': 'nl_NL.UTF-8', 'JETSON_CUDA': '10.2.300', 'XDG_SESSION_TYPE': 'tty', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/home/jetson/ros2_foxy/ros2-linux/opt/yaml_cpp_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/opt/rviz_ogre_vendor/lib:/home/jetson/ros2_foxy/ros2-linux/lib', 'MOTD_SHOWN': 'pam', 'HOME': '/home/jetson', 'OLDPWD': '/home/jetson', 'SSH_TTY': '/dev/pts/0', 'JETSON_TENSORRT': '8.0.1.6', 'JETSON_L4T': '32.6.1', 'ROS_PYTHON_VERSION': '3', 'LC_MONETARY': 'nl_NL.UTF-8', 'JETSON_OPENCV_CUDA': 'YES', 'JETSON_VISIONWORKS': '1.6.0.501', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'JETSON_CHIP_ID': '33', 'COLCON_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install:/home/jetson/ros2_foxy/ros2-linux', 'ROS_DISTRO': 'foxy', 'LOGNAME': 'jetson', 'JETSON_MODULE': 'P3448-0000', 'JETSON_SERIAL_NUMBER': '1423721000224', 'JETSON_CUDNN': '8.2.1.32', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'PKG_CONFIG_PATH': '/home/jetson/ros2_foxy/ros2-linux/lib/aarch64-linux-gnu/pkgconfig:/home/jetson/ros2_foxy/ros2-linux/lib/pkgconfig', 'JETSON_CODENAME': 'porg', 'XDG_SESSION_CLASS': 'user', 'TERM': 'xterm-256color', 'XDG_SESSION_ID': '3', 'ROS_LOCALHOST_ONLY': '0', 'PATH': '/home/jetson/.local/bin:/home/jetson/ros2_foxy/ros2-linux/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin', 'JETSON_OPENCV': '4.5.3', 'LC_ADDRESS': 'nl_NL.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'JETSON_MACHINE': 'NVIDIA Jetson Nano (Developer Kit Version)', 'LANG': 'en_US.UTF-8', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'JETSON_L4T_REVISION': '6.1', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'JETSON_SOC': 'tegra210', 'SSH_AUTH_SOCK': '/tmp/ssh-DcVcSMyqsY/agent.7426', 'AMENT_PREFIX_PATH': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ros2_foxy/ros2-linux', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'JETSON_BOARDIDS': '3448', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'JETSON_L4T_RELEASE': '32', 'JETSON_VULKAN_INFO': '1.2.141', 'JETSON_CUDA_ARCH_BIN': '5.3', 'PWD': '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app', 'SSH_CONNECTION': '192.168.2.18 55274 192.168.2.55 22', 'XDG_DATA_DIRS': '/usr/local/share:/usr/share:/var/lib/snapd/desktop', 'JETSON_VPI': 'ii libnvvpi1 1.1.15 arm64 NVIDIA Vision Programming Interface library', 'PYTHONPATH': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'JETSON_JETPACK': '4.6', 'CMAKE_PREFIX_PATH': '/home/jetson/ros2_foxy/ros2-linux'}, 'shell': False}
+[20.489483] (-) TimerEvent: {}
+[20.590206] (-) TimerEvent: {}
+[20.690869] (-) TimerEvent: {}
+[20.791524] (-) TimerEvent: {}
+[20.892167] (-) TimerEvent: {}
+[20.992820] (-) TimerEvent: {}
+[21.093498] (-) TimerEvent: {}
+[21.194074] (-) TimerEvent: {}
+[21.294657] (-) TimerEvent: {}
+[21.395317] (-) TimerEvent: {}
+[21.495993] (-) TimerEvent: {}
+[21.596648] (-) TimerEvent: {}
+[21.692884] (robot_app) StdoutLine: {'line': b'running develop\n'}
+[21.696841] (-) TimerEvent: {}
+[21.797484] (-) TimerEvent: {}
+[21.898077] (-) TimerEvent: {}
+[21.998725] (-) TimerEvent: {}
+[22.099368] (-) TimerEvent: {}
+[22.200015] (-) TimerEvent: {}
+[22.300645] (-) TimerEvent: {}
+[22.401286] (-) TimerEvent: {}
+[22.432287] (robot_app) StdoutLine: {'line': b'running egg_info\n'}
+[22.432979] (robot_app) StdoutLine: {'line': b'writing robot_app.egg-info/PKG-INFO\n'}
+[22.433675] (robot_app) StdoutLine: {'line': b'writing dependency_links to robot_app.egg-info/dependency_links.txt\n'}
+[22.434361] (robot_app) StdoutLine: {'line': b'writing entry points to robot_app.egg-info/entry_points.txt\n'}
+[22.434993] (robot_app) StdoutLine: {'line': b'writing requirements to robot_app.egg-info/requires.txt\n'}
+[22.435426] (robot_app) StdoutLine: {'line': b'writing top-level names to robot_app.egg-info/top_level.txt\n'}
+[22.446050] (robot_app) StdoutLine: {'line': b"reading manifest file 'robot_app.egg-info/SOURCES.txt'\n"}
+[22.448922] (robot_app) StdoutLine: {'line': b"writing manifest file 'robot_app.egg-info/SOURCES.txt'\n"}
+[22.501497] (-) TimerEvent: {}
+[22.602159] (-) TimerEvent: {}
+[22.608416] (robot_app) StdoutLine: {'line': b'running build_ext\n'}
+[22.609174] (robot_app) StdoutLine: {'line': b'Creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages/robot-app.egg-link (link to .)\n'}
+[22.612250] (robot_app) StdoutLine: {'line': b'\n'}
+[22.612833] (robot_app) StdoutLine: {'line': b'Installed /home/jetson/ANI717_Robotics/robot_ws/build/robot_app\n'}
+[22.613213] (robot_app) StdoutLine: {'line': b'running install_data\n'}
+[22.702413] (-) TimerEvent: {}
+[22.741317] (robot_app) CommandEnded: {'returncode': 0}
+[22.777075] (robot_app) JobEnded: {'identifier': 'robot_app', 'rc': 0}
+[22.780355] (-) EventReactorShutdown: {}

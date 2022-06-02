@@ -1,0 +1,18 @@
+[3.100s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion
+[4.225s] running develop
+[4.925s] running egg_info
+[4.925s] writing ros2_twist_message_to_robot_motion.egg-info/PKG-INFO
+[4.926s] writing dependency_links to ros2_twist_message_to_robot_motion.egg-info/dependency_links.txt
+[4.927s] writing entry points to ros2_twist_message_to_robot_motion.egg-info/entry_points.txt
+[4.927s] writing requirements to ros2_twist_message_to_robot_motion.egg-info/requires.txt
+[4.928s] writing top-level names to ros2_twist_message_to_robot_motion.egg-info/top_level.txt
+[4.938s] reading manifest file 'ros2_twist_message_to_robot_motion.egg-info/SOURCES.txt'
+[4.942s] writing manifest file 'ros2_twist_message_to_robot_motion.egg-info/SOURCES.txt'
+[5.090s] running build_ext
+[5.090s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages/ros2-twist-message-to-robot-motion.egg-link (link to .)
+[5.093s] Installing adafruit script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/ros2_twist_message_to_robot_motion
+[5.094s] Installing jetbot script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/ros2_twist_message_to_robot_motion
+[5.095s] 
+[5.095s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion
+[5.096s] running install_data
+[5.225s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion

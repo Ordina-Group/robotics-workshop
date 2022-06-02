@@ -1,0 +1,17 @@
+[7.178s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish
+[8.515s] running develop
+[9.301s] running egg_info
+[9.302s] writing ros2_csi_camera_publish.egg-info/PKG-INFO
+[9.302s] writing dependency_links to ros2_csi_camera_publish.egg-info/dependency_links.txt
+[9.303s] writing entry points to ros2_csi_camera_publish.egg-info/entry_points.txt
+[9.303s] writing requirements to ros2_csi_camera_publish.egg-info/requires.txt
+[9.304s] writing top-level names to ros2_csi_camera_publish.egg-info/top_level.txt
+[9.324s] reading manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+[9.328s] writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+[9.501s] running build_ext
+[9.503s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages/ros2-csi-camera-publish.egg-link (link to .)
+[9.508s] Installing jetson script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/ros2_csi_camera_publish
+[9.510s] 
+[9.511s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish
+[9.512s] running install_data
+[9.668s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish

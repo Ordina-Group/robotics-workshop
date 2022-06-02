@@ -1,0 +1,401 @@
+[0.598s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build', '--symlink-install']
+[0.600s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fa443e7c0>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=4, paths=None, symlink_install=True, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fa443e7c0>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fa443ed30>)
+[0.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[0.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[0.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[0.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[0.686s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[0.687s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[0.687s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/jetson/ANI717_Robotics/robot_ws'
+[0.687s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[0.688s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[0.689s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[0.736s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['cmake', 'python']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'cmake'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python'
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['python_setup_py']
+[0.737s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'python_setup_py'
+[0.738s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extensions ['ignore', 'ignore_ament_install']
+[0.738s] Level 1:colcon.colcon_core.package_identification:_identify(build) by extension 'ignore'
+[0.738s] Level 1:colcon.colcon_core.package_identification:_identify(build) ignored
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extensions ['ignore', 'ignore_ament_install']
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(install) by extension 'ignore'
+[0.739s] Level 1:colcon.colcon_core.package_identification:_identify(install) ignored
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extensions ['ignore', 'ignore_ament_install']
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(log) by extension 'ignore'
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(log) ignored
+[0.740s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ignore', 'ignore_ament_install']
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ignore_ament_install'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_pkg']
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_pkg'
+[0.741s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['colcon_meta']
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'colcon_meta'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['ros']
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'ros'
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['cmake', 'python']
+[0.742s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'cmake'
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python'
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extensions ['python_setup_py']
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src) by extension 'python_setup_py'
+[0.743s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extensions ['ignore', 'ignore_ament_install']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extension 'ignore'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extension 'ignore_ament_install'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extensions ['colcon_pkg']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extension 'colcon_pkg'
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extensions ['colcon_meta']
+[0.744s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extension 'colcon_meta'
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extensions ['ros']
+[0.745s] Level 1:colcon.colcon_core.package_identification:_identify(src/robot_app) by extension 'ros'
+[0.756s] DEBUG:colcon.colcon_core.package_identification:Package 'src/robot_app' with type 'ros.ament_python' and name 'robot_app'
+[0.757s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extensions ['ignore', 'ignore_ament_install']
+[0.757s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extension 'ignore'
+[0.757s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extension 'ignore_ament_install'
+[0.757s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extensions ['colcon_pkg']
+[0.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extension 'colcon_pkg'
+[0.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extensions ['colcon_meta']
+[0.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extension 'colcon_meta'
+[0.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extensions ['ros']
+[0.758s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_csi_camera_publish) by extension 'ros'
+[0.762s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_csi_camera_publish' with type 'ros.ament_python' and name 'ros2_csi_camera_publish'
+[0.762s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extensions ['ignore', 'ignore_ament_install']
+[0.762s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extension 'ignore'
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extension 'ignore_ament_install'
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extensions ['colcon_pkg']
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extension 'colcon_pkg'
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extensions ['colcon_meta']
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extension 'colcon_meta'
+[0.763s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extensions ['ros']
+[0.764s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_deep_learning_to_twist_message) by extension 'ros'
+[0.767s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_deep_learning_to_twist_message' with type 'ros.ament_python' and name 'ros2_deep_learning_to_twist_message'
+[0.767s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extensions ['ignore', 'ignore_ament_install']
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extension 'ignore'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extension 'ignore_ament_install'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extensions ['colcon_pkg']
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extension 'colcon_pkg'
+[0.768s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extensions ['colcon_meta']
+[0.769s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extension 'colcon_meta'
+[0.769s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extensions ['ros']
+[0.769s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_gamepad_to_twist_message) by extension 'ros'
+[0.772s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_gamepad_to_twist_message' with type 'ros.ament_python' and name 'ros2_gamepad_to_twist_message'
+[0.772s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extensions ['ignore', 'ignore_ament_install']
+[0.772s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extension 'ignore'
+[0.773s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extension 'ignore_ament_install'
+[0.773s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extensions ['colcon_pkg']
+[0.773s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extension 'colcon_pkg'
+[0.773s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extensions ['colcon_meta']
+[0.773s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extension 'colcon_meta'
+[0.774s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extensions ['ros']
+[0.774s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_save_camera_image) by extension 'ros'
+[0.777s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_save_camera_image' with type 'ros.ament_python' and name 'ros2_save_camera_image'
+[0.777s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extensions ['ignore', 'ignore_ament_install']
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extension 'ignore'
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extension 'ignore_ament_install'
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extensions ['colcon_pkg']
+[0.778s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extension 'colcon_pkg'
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extensions ['colcon_meta']
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extension 'colcon_meta'
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extensions ['ros']
+[0.779s] Level 1:colcon.colcon_core.package_identification:_identify(src/ros2_twist_message_to_robot_motion) by extension 'ros'
+[0.782s] DEBUG:colcon.colcon_core.package_identification:Package 'src/ros2_twist_message_to_robot_motion' with type 'ros.ament_python' and name 'ros2_twist_message_to_robot_motion'
+[0.782s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[0.783s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[0.783s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[0.783s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[0.783s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[0.877s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[0.877s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[0.886s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 6 installed packages in /home/jetson/ANI717_Robotics/robot_ws/install
+[0.918s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 306 installed packages in /home/jetson/ros2_foxy/ros2-linux
+[0.968s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[1.069s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_args' from command line to 'None'
+[1.069s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_target' from command line to 'None'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_clean_cache' from command line to 'False'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_clean_first' from command line to 'False'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'cmake_force_configure' from command line to 'False'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'ament_cmake_args' from command line to 'None'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'catkin_cmake_args' from command line to 'None'
+[1.070s] Level 5:colcon.colcon_core.verb:set package 'ros2_csi_camera_publish' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.071s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_csi_camera_publish' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_csi_camera_publish', 'symlink_install': True, 'test_result_base': None}
+[1.074s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_args' from command line to 'None'
+[1.074s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_target' from command line to 'None'
+[1.074s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.074s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_clean_cache' from command line to 'False'
+[1.075s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_clean_first' from command line to 'False'
+[1.075s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'cmake_force_configure' from command line to 'False'
+[1.075s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'ament_cmake_args' from command line to 'None'
+[1.075s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'catkin_cmake_args' from command line to 'None'
+[1.075s] Level 5:colcon.colcon_core.verb:set package 'ros2_deep_learning_to_twist_message' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.075s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_deep_learning_to_twist_message' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_deep_learning_to_twist_message', 'symlink_install': True, 'test_result_base': None}
+[1.078s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_args' from command line to 'None'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_target' from command line to 'None'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_clean_cache' from command line to 'False'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_clean_first' from command line to 'False'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'cmake_force_configure' from command line to 'False'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'ament_cmake_args' from command line to 'None'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'catkin_cmake_args' from command line to 'None'
+[1.079s] Level 5:colcon.colcon_core.verb:set package 'ros2_gamepad_to_twist_message' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.080s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_gamepad_to_twist_message' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_gamepad_to_twist_message', 'symlink_install': True, 'test_result_base': None}
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_args' from command line to 'None'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_target' from command line to 'None'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_clean_cache' from command line to 'False'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_clean_first' from command line to 'False'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'cmake_force_configure' from command line to 'False'
+[1.083s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'ament_cmake_args' from command line to 'None'
+[1.084s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'catkin_cmake_args' from command line to 'None'
+[1.084s] Level 5:colcon.colcon_core.verb:set package 'ros2_save_camera_image' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.084s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_save_camera_image' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_save_camera_image', 'symlink_install': True, 'test_result_base': None}
+[1.087s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_args' from command line to 'None'
+[1.087s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_target' from command line to 'None'
+[1.087s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.087s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_clean_cache' from command line to 'False'
+[1.087s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_clean_first' from command line to 'False'
+[1.088s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'cmake_force_configure' from command line to 'False'
+[1.088s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'ament_cmake_args' from command line to 'None'
+[1.088s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'catkin_cmake_args' from command line to 'None'
+[1.088s] Level 5:colcon.colcon_core.verb:set package 'ros2_twist_message_to_robot_motion' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.088s] DEBUG:colcon.colcon_core.verb:Building package 'ros2_twist_message_to_robot_motion' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_twist_message_to_robot_motion', 'symlink_install': True, 'test_result_base': None}
+[1.091s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_args' from command line to 'None'
+[1.091s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_target' from command line to 'None'
+[1.091s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_clean_cache' from command line to 'False'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_clean_first' from command line to 'False'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'cmake_force_configure' from command line to 'False'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'ament_cmake_args' from command line to 'None'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'catkin_cmake_args' from command line to 'None'
+[1.092s] Level 5:colcon.colcon_core.verb:set package 'robot_app' build argument 'catkin_skip_building_tests' from command line to 'False'
+[1.092s] DEBUG:colcon.colcon_core.verb:Building package 'robot_app' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app', 'merge_install': False, 'path': '/home/jetson/ANI717_Robotics/robot_ws/src/robot_app', 'symlink_install': True, 'test_result_base': None}
+[1.094s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[1.102s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[1.103s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_csi_camera_publish' with build type 'ament_python'
+[1.104s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_csi_camera_publish', 'ament_prefix_path')
+[1.120s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[1.121s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/ament_prefix_path.ps1'
+[1.124s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/ament_prefix_path.dsv'
+[1.125s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/ament_prefix_path.sh'
+[1.130s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.130s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.175s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_deep_learning_to_twist_message' with build type 'ament_python'
+[1.176s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_deep_learning_to_twist_message', 'ament_prefix_path')
+[1.179s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/ament_prefix_path.ps1'
+[1.182s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/ament_prefix_path.dsv'
+[1.183s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/ament_prefix_path.sh'
+[1.187s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.187s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.234s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_gamepad_to_twist_message' with build type 'ament_python'
+[1.235s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_gamepad_to_twist_message', 'ament_prefix_path')
+[1.238s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/ament_prefix_path.ps1'
+[1.241s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/ament_prefix_path.dsv'
+[1.242s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/ament_prefix_path.sh'
+[1.245s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.246s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[1.290s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_save_camera_image' with build type 'ament_python'
+[1.291s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_save_camera_image', 'ament_prefix_path')
+[1.294s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/ament_prefix_path.ps1'
+[1.296s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/ament_prefix_path.dsv'
+[1.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/ament_prefix_path.sh'
+[1.301s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[1.302s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[2.550s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_csi_camera_publish'
+[2.554s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[2.554s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.790s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_deep_learning_to_twist_message'
+[3.794s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.794s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[5.040s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_gamepad_to_twist_message'
+[5.043s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[5.043s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[6.283s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_save_camera_image'
+[6.286s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[6.286s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[8.467s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish
+[8.498s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message
+[8.509s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message
+[8.522s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image
+[11.033s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_csi_camera_publish', 'pythonpath_develop')
+[11.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath_develop.ps1'
+[11.040s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish
+[11.043s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath_develop.dsv'
+[11.045s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath_develop.sh'
+[11.078s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish' for CMake module files
+[11.081s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish' for CMake config files
+[11.084s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib'
+[11.086s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/bin'
+[11.086s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/pkgconfig/ros2_csi_camera_publish.pc'
+[11.087s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages'
+[11.088s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_csi_camera_publish', 'pythonpath')
+[11.093s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath.ps1'
+[11.095s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath.dsv'
+[11.097s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/hook/pythonpath.sh'
+[11.100s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/bin'
+[11.100s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_csi_camera_publish)
+[11.105s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/package.ps1'
+[11.109s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/package.dsv'
+[11.113s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/package.sh'
+[11.117s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/package.bash'
+[11.120s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish/package.zsh'
+[11.123s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/colcon-core/packages/ros2_csi_camera_publish)
+[11.127s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_twist_message_to_robot_motion' with build type 'ament_python'
+[11.128s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_twist_message_to_robot_motion', 'ament_prefix_path')
+[11.131s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/ament_prefix_path.ps1'
+[11.133s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/ament_prefix_path.dsv'
+[11.135s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/ament_prefix_path.sh'
+[11.140s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[11.140s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[11.192s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_gamepad_to_twist_message', 'pythonpath_develop')
+[11.196s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath_develop.ps1'
+[11.198s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message
+[11.199s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath_develop.dsv'
+[11.200s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath_develop.sh'
+[11.206s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message' for CMake module files
+[11.208s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message' for CMake config files
+[11.210s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib'
+[11.210s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/bin'
+[11.211s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/pkgconfig/ros2_gamepad_to_twist_message.pc'
+[11.211s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages'
+[11.212s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_gamepad_to_twist_message', 'pythonpath')
+[11.214s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath.ps1'
+[11.216s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath.dsv'
+[11.217s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/hook/pythonpath.sh'
+[11.219s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/bin'
+[11.219s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_gamepad_to_twist_message)
+[11.222s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/package.ps1'
+[11.224s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/package.dsv'
+[11.226s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/package.sh'
+[11.227s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/package.bash'
+[11.229s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/package.zsh'
+[11.230s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/colcon-core/packages/ros2_gamepad_to_twist_message)
+[11.231s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_deep_learning_to_twist_message', 'pythonpath_develop')
+[11.233s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath_develop.ps1'
+[11.236s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath_develop.dsv'
+[11.237s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message
+[11.239s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath_develop.sh'
+[11.244s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message' for CMake module files
+[11.246s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message' for CMake config files
+[11.248s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib'
+[11.249s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/bin'
+[11.249s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/pkgconfig/ros2_deep_learning_to_twist_message.pc'
+[11.250s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages'
+[11.250s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_deep_learning_to_twist_message', 'pythonpath')
+[11.252s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath.ps1'
+[11.254s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath.dsv'
+[11.255s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/hook/pythonpath.sh'
+[11.256s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/bin'
+[11.257s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_deep_learning_to_twist_message)
+[11.260s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/package.ps1'
+[11.262s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/package.dsv'
+[11.264s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/package.sh'
+[11.265s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/package.bash'
+[11.266s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/ros2_deep_learning_to_twist_message/package.zsh'
+[11.268s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/share/colcon-core/packages/ros2_deep_learning_to_twist_message)
+[11.272s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_save_camera_image', 'pythonpath_develop')
+[11.274s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath_develop.ps1'
+[11.276s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image
+[11.278s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath_develop.dsv'
+[11.280s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath_develop.sh'
+[11.285s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image' for CMake module files
+[11.287s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image' for CMake config files
+[11.289s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib'
+[11.290s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/bin'
+[11.290s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/pkgconfig/ros2_save_camera_image.pc'
+[11.292s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages'
+[11.292s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_save_camera_image', 'pythonpath')
+[11.295s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath.ps1'
+[11.297s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath.dsv'
+[11.298s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/hook/pythonpath.sh'
+[11.300s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/bin'
+[11.300s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_save_camera_image)
+[11.303s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/package.ps1'
+[11.305s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/package.dsv'
+[11.307s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/package.sh'
+[11.309s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/package.bash'
+[11.310s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/ros2_save_camera_image/package.zsh'
+[11.311s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/share/colcon-core/packages/ros2_save_camera_image)
+[12.510s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/ros2_twist_message_to_robot_motion'
+[12.513s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[12.514s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[14.371s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion
+[16.598s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_twist_message_to_robot_motion', 'pythonpath_develop')
+[16.601s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath_develop.ps1'
+[16.603s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion
+[16.604s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath_develop.dsv'
+[16.606s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath_develop.sh'
+[16.611s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion' for CMake module files
+[16.613s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion' for CMake config files
+[16.616s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib'
+[16.616s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/bin'
+[16.616s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/pkgconfig/ros2_twist_message_to_robot_motion.pc'
+[16.617s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages'
+[16.617s] Level 1:colcon.colcon_core.shell:create_environment_hook('ros2_twist_message_to_robot_motion', 'pythonpath')
+[16.620s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath.ps1'
+[16.621s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath.dsv'
+[16.623s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/hook/pythonpath.sh'
+[16.625s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/bin'
+[16.626s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(ros2_twist_message_to_robot_motion)
+[16.629s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/package.ps1'
+[16.631s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/package.dsv'
+[16.633s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/package.sh'
+[16.635s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/package.bash'
+[16.636s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/ros2_twist_message_to_robot_motion/package.zsh'
+[16.637s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/share/colcon-core/packages/ros2_twist_message_to_robot_motion)
+[16.638s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/jetson/ANI717_Robotics/robot_ws/src/robot_app' with build type 'ament_python'
+[16.639s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_app', 'ament_prefix_path')
+[16.641s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/ament_prefix_path.ps1'
+[16.644s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/ament_prefix_path.dsv'
+[16.645s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/ament_prefix_path.sh'
+[16.649s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[16.649s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[17.922s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/jetson/ANI717_Robotics/robot_ws/src/robot_app'
+[17.925s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[17.925s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[19.821s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app': AMENT_PREFIX_PATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ros2_foxy/ros2-linux PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/robot_app --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/robot_app/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/robot_app
+[22.039s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_app', 'pythonpath_develop')
+[22.042s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app/share/robot_app/hook/pythonpath_develop.ps1'
+[22.044s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app' returned '0': AMENT_PREFIX_PATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app:/home/jetson/ros2_foxy/ros2-linux PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_twist_message_to_robot_motion:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_twist_message_to_robot_motion/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_save_camera_image:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_save_camera_image/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish:/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:/home/jetson/ANI717_Robotics/robot_ws/build/robot_app:/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages:/home/jetson/ros2_foxy/ros2-linux/lib/python3.8/site-packages /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/robot_app --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/robot_app/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/robot_app
+[22.047s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app/share/robot_app/hook/pythonpath_develop.dsv'
+[22.049s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/build/robot_app/share/robot_app/hook/pythonpath_develop.sh'
+[22.054s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app' for CMake module files
+[22.057s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app' for CMake config files
+[22.059s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib'
+[22.059s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/bin'
+[22.060s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/pkgconfig/robot_app.pc'
+[22.061s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages'
+[22.061s] Level 1:colcon.colcon_core.shell:create_environment_hook('robot_app', 'pythonpath')
+[22.063s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/pythonpath.ps1'
+[22.065s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/pythonpath.dsv'
+[22.066s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/hook/pythonpath.sh'
+[22.068s] Level 1:colcon.colcon_core.environment:checking '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/bin'
+[22.068s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(robot_app)
+[22.071s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/package.ps1'
+[22.073s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/package.dsv'
+[22.075s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/package.sh'
+[22.077s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/package.bash'
+[22.078s] INFO:colcon.colcon_core.shell:Creating package script '/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/package.zsh'
+[22.079s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/colcon-core/packages/robot_app)
+[22.080s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[22.081s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[22.082s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[22.082s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[22.106s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[22.107s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[22.107s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[22.126s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[22.129s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetson/ANI717_Robotics/robot_ws/install/local_setup.ps1'
+[22.133s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jetson/ANI717_Robotics/robot_ws/install/_local_setup_util_ps1.py'
+[22.139s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetson/ANI717_Robotics/robot_ws/install/setup.ps1'
+[22.144s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetson/ANI717_Robotics/robot_ws/install/local_setup.sh'
+[22.146s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/jetson/ANI717_Robotics/robot_ws/install/_local_setup_util_sh.py'
+[22.148s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetson/ANI717_Robotics/robot_ws/install/setup.sh'
+[22.154s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetson/ANI717_Robotics/robot_ws/install/local_setup.bash'
+[22.156s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetson/ANI717_Robotics/robot_ws/install/setup.bash'
+[22.161s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/jetson/ANI717_Robotics/robot_ws/install/local_setup.zsh'
+[22.163s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/jetson/ANI717_Robotics/robot_ws/install/setup.zsh'

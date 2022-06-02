@@ -1,0 +1,5 @@
+{
+    "image_topic": "/image",
+    "twist_topic": "/cmd_vel",
+    "data_directory": "../images"
+}

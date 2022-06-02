@@ -1,0 +1,19 @@
+[7.712s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message
+[9.077s] running develop
+[9.886s] running egg_info
+[9.887s] writing ros2_gamepad_to_twist_message.egg-info/PKG-INFO
+[9.888s] writing dependency_links to ros2_gamepad_to_twist_message.egg-info/dependency_links.txt
+[9.889s] writing entry points to ros2_gamepad_to_twist_message.egg-info/entry_points.txt
+[9.890s] writing requirements to ros2_gamepad_to_twist_message.egg-info/requires.txt
+[9.891s] writing top-level names to ros2_gamepad_to_twist_message.egg-info/top_level.txt
+[9.903s] reading manifest file 'ros2_gamepad_to_twist_message.egg-info/SOURCES.txt'
+[9.907s] writing manifest file 'ros2_gamepad_to_twist_message.egg-info/SOURCES.txt'
+[10.199s] running build_ext
+[10.201s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages/ros2-gamepad-to-twist-message.egg-link (link to .)
+[10.204s] Installing logitech script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/ros2_gamepad_to_twist_message
+[10.206s] Installing waveshare script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/ros2_gamepad_to_twist_message
+[10.207s] 
+[10.208s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message
+[10.209s] running install_data
+[10.210s] copying launch/launch.py -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/share/ros2_gamepad_to_twist_message/launch
+[10.554s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_gamepad_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_gamepad_to_twist_message

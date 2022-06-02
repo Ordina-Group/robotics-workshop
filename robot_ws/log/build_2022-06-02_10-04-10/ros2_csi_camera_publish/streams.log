@@ -1,0 +1,25 @@
+[6.978s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish
+[8.474s] running develop
+[9.243s] running egg_info
+[9.244s] creating ros2_csi_camera_publish.egg-info
+[9.245s] writing ros2_csi_camera_publish.egg-info/PKG-INFO
+[9.247s] writing dependency_links to ros2_csi_camera_publish.egg-info/dependency_links.txt
+[9.248s] writing entry points to ros2_csi_camera_publish.egg-info/entry_points.txt
+[9.250s] writing requirements to ros2_csi_camera_publish.egg-info/requires.txt
+[9.251s] writing top-level names to ros2_csi_camera_publish.egg-info/top_level.txt
+[9.257s] writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+[9.265s] reading manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+[9.273s] writing manifest file 'ros2_csi_camera_publish.egg-info/SOURCES.txt'
+[9.528s] running build_ext
+[9.529s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages/ros2-csi-camera-publish.egg-link (link to .)
+[9.534s] Installing jetson script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/ros2_csi_camera_publish
+[9.536s] 
+[9.537s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish
+[9.537s] running install_data
+[9.538s] creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index
+[9.539s] creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index
+[9.539s] creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index/packages
+[9.540s] copying resource/ros2_csi_camera_publish -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ament_index/resource_index/packages
+[9.541s] copying package.xml -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish
+[9.542s] copying settings.json -> /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/share/ros2_csi_camera_publish
+[9.807s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_csi_camera_publish/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_csi_camera_publish

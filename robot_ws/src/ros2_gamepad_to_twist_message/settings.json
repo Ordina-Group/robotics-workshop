@@ -1,0 +1,4 @@
+{
+    "publish_topic": "/cmd_vel",
+    "publish_frequency": 100
+}

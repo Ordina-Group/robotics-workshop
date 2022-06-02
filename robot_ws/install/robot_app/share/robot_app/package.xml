@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>robot_app</name>
+  <version>1.0.0</version>
+  <description>Package to Run Robots with Gamepad or Autonomously</description>
+  <maintainer email="animesh.ani@live.com">ANI717 (Animesh Bala Ani)</maintainer>
+  <license>MIT License</license>
+
+  <depend>ros2_csi_camera_publish</depend>
+  <depend>ros2_deep_learning_to_twist_message</depend>
+  <depend>ros2_gamepad_to_twist_message</depend>
+  <depend>ros2_save_camera_image</depend>
+  <depend>ros2_twist_message_to_robot_motion</depend>
+  <depend>image_tools</depend>
+
+  <test_depend>ament_copyright</test_depend>
+  <test_depend>ament_flake8</test_depend>
+  <test_depend>ament_pep257</test_depend>
+  <test_depend>python3-pytest</test_depend>
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

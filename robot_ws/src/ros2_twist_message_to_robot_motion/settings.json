@@ -1,0 +1,5 @@
+{
+    "subscribe_topic": "/cmd_vel",
+    "x_calibration": 0.50,
+    "z_calibration": 0.25
+}

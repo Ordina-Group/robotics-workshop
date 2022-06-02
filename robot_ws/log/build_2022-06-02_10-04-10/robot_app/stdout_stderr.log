@@ -1,0 +1,24 @@
+running develop
+running egg_info
+creating robot_app.egg-info
+writing robot_app.egg-info/PKG-INFO
+writing dependency_links to robot_app.egg-info/dependency_links.txt
+writing entry points to robot_app.egg-info/entry_points.txt
+writing requirements to robot_app.egg-info/requires.txt
+writing top-level names to robot_app.egg-info/top_level.txt
+writing manifest file 'robot_app.egg-info/SOURCES.txt'
+reading manifest file 'robot_app.egg-info/SOURCES.txt'
+writing manifest file 'robot_app.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/lib/python3.8/site-packages/robot-app.egg-link (link to .)
+
+Installed /home/jetson/ANI717_Robotics/robot_ws/build/robot_app
+running install_data
+creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/ament_index
+creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/ament_index/resource_index
+creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/ament_index/resource_index/packages
+copying resource/robot_app -> /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/ament_index/resource_index/packages
+copying package.xml -> /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app
+creating /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/launch
+copying launch/gamepad_launch.py -> /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/launch
+copying launch/autonomous_launch.py -> /home/jetson/ANI717_Robotics/robot_ws/install/robot_app/share/robot_app/launch

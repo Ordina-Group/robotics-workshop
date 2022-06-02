@@ -1,0 +1,88 @@
+<?xml version="1.0" ?>
+<robot name="JetBot_sim"  xmlns:xacro="http://ros.org/wiki/xacro">
+  <xacro:arg name="camera_visualize" default="true"/>
+  
+  <gazebo reference="left_wheel">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500.0</kp>
+    <kd>10.0</kd>
+    <min_depth>0.001</min_depth>
+    <max_vel>0.5</max_vel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>
+  
+  <gazebo reference="right_wheel">
+    <mu1>0.1</mu1>
+    <mu2>0.1</mu2>
+    <kp>500.0</kp>
+    <kd>10.0</kd>
+    <min_depth>0.001</min_depth>
+    <max_vel>0.5</max_vel>
+    <fdir1>1 0 0</fdir1>
+  </gazebo>
+  
+  <gazebo>
+    <plugin name="diff_drive_controller" filename="libgazebo_ros_diff_drive.so">
+      <command_topic>cmd_vel</command_topic>
+      <odometry_topic>odom</odometry_topic>
+      <odometry_frame>odom</odometry_frame>
+      <odometry_source>encoder</odometry_source>
+      <publish_odom_tf>true</publish_odom_tf>
+      <robot_base_frame>base_footprint</robot_base_frame>
+      <publish_wheel_tf>false</publish_wheel_tf>
+      <publish_tf>true</publish_tf>
+      <publish_wheel_joint_state>true</publish_wheel_joint_state>
+      <legacy_mode>false</legacy_mode>
+      <update_rate>30</update_rate>
+      <left_joint>left_wheel_hinge</left_joint>
+      <right_joint>right_wheel_hinge</right_joint>
+      <wheel_separation>0.096</wheel_separation>
+      <wheel_diameter>0.065</wheel_diameter>
+      <wheel_acceleration>1</wheel_acceleration>
+      <wheel_torque>1</wheel_torque>
+      <ros_debug_level>na</ros_debug_level>
+    </plugin>
+  </gazebo>
+  
+  
+  
+  <gazebo reference="camera_link">
+    <sensor type="camera" name="camera">
+      <always_on>true</always_on>
+      <visualize>$(arg camera_visualize)</visualize>
+      <camera>
+          <horizontal_fov>2.79253</horizontal_fov>
+          <image>
+              <width>640</width>
+              <height>320</height>
+              <format>R8G8B8</format>
+          </image>
+          <clip>
+              <near>0.01</near>
+              <far>1</far>
+          </clip>
+          <noise>
+            <type>gaussian</type>
+            <mean>0.0</mean>
+            <stddev>0.01</stddev>
+          </noise>
+      </camera>
+      <plugin name="camera_controller" filename="libgazebo_ros_camera.so">
+        <always_on>true</always_on>
+        <update_rate>30.0</update_rate>
+        <camera_name>camera</camera_name>
+        <frame_name>camera_link</frame_name>
+        <ros>
+          <remapping>camera/image_raw:=image</remapping>
+        </ros>
+        <hack_baseline>0.07</hack_baseline>
+        <distortion_k1>0.0</distortion_k1>
+        <distortion_k2>0.0</distortion_k2>
+        <distortion_k3>0.0</distortion_k3>
+        <distortion_t1>0.0</distortion_t1>
+        <distortion_t2>0.0</distortion_t2>
+      </plugin>
+    </sensor>
+  </gazebo>
+</robot>

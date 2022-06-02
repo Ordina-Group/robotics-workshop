@@ -1,0 +1,17 @@
+[8.438s] Invoking command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message
+[9.921s] running develop
+[10.813s] running egg_info
+[10.814s] writing ros2_deep_learning_to_twist_message.egg-info/PKG-INFO
+[10.815s] writing dependency_links to ros2_deep_learning_to_twist_message.egg-info/dependency_links.txt
+[10.822s] writing entry points to ros2_deep_learning_to_twist_message.egg-info/entry_points.txt
+[10.823s] writing requirements to ros2_deep_learning_to_twist_message.egg-info/requires.txt
+[10.824s] writing top-level names to ros2_deep_learning_to_twist_message.egg-info/top_level.txt
+[10.836s] reading manifest file 'ros2_deep_learning_to_twist_message.egg-info/SOURCES.txt'
+[10.843s] writing manifest file 'ros2_deep_learning_to_twist_message.egg-info/SOURCES.txt'
+[11.048s] running build_ext
+[11.049s] Creating /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages/ros2-deep-learning-to-twist-message.egg-link (link to .)
+[11.050s] Installing onnx script to /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/ros2_deep_learning_to_twist_message
+[11.050s] 
+[11.051s] Installed /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message
+[11.051s] running install_data
+[12.588s] Invoked command in '/home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message' returned '0': PYTHONPATH=/home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --prefix /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message --editable --build-directory /home/jetson/ANI717_Robotics/robot_ws/build/ros2_deep_learning_to_twist_message/build --no-deps install_data --install-dir /home/jetson/ANI717_Robotics/robot_ws/install/ros2_deep_learning_to_twist_message
