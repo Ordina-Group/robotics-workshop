@@ -14,8 +14,8 @@ Contains ROS2 packages to run robot car to collect annotated camera images while
 
 
 ## Colaborators
-* [Ricky van Rijn](https://www.linkedin.com/in/ani717/) (Software Development)<br/>
-* [Remco van Gorsel](https://sites.temple.edu/cflab/people/) (Software Development)<br/>
+* [Ricky van Rijn](https://www.linkedin.com/in/rickyvanrijn) (Software Development)<br/>
+* [Remco van Gorsel](https://www.linkedin.com/in/remco-van-gorsel) (Software Development)<br/>
 
 
 ## Design Diagram
