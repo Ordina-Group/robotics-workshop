@@ -8,3 +8,6 @@ sudo -H python3 -m pip install Adafruit-MotorHAT / pip3 install
 
 #Install support of "Typed Attributes" enforcement framework
 sudo -H python3 -m pip install traitlets  / pip3 install traitlets
+
+#Add User to Input Group
+sudo gpasswd -a $USER input
