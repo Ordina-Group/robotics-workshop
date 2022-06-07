@@ -86,28 +86,34 @@ class Twist_to_Motion(Node):
         if x == 0:
             # rotate right
             if z > 0:
-                self.robot.set_motors(0, -z)
+                self.robot.set_motors(z, 0)
+                # self.robot.set_motors(0, -z)
             # rotate left
             elif z < 0:
-                self.robot.set_motors(-z, 0)
+                self.robot.set_motors(0, -z)
+                # self.robot.set_motors(-z, 0)
         
         # moving forward
         elif x > 0:
             # rotate right
             if z > 0:
-                self.robot.set_motors(-x/2, -(x+z)/2)
+                self.robot.set_motors(-(x+z)/2, -x/2)
+                # self.robot.set_motors(-x/2, -(x+z)/2)
             # rotate left
             elif z < 0:
-                self.robot.set_motors(-(x-z)/2, -x/2)
+                self.robot.set_motors(-x/2, -(x-z)/2)
+                # self.robot.set_motors(-(x-z)/2, -x/2)
         
         # moving backward
         elif x < 0:
             # rotate right
             if z > 0:
-                self.robot.set_motors(-x/2, -(x-z)/2)
+                self.robot.set_motors(-(x+z)/2, -x/2)
+                # self.robot.set_motors(-x/2, -(x-z)/2)
             # rotate left
             elif z < 0:
-                self.robot.set_motors(-(x+z)/2, -x/2)
+                self.robot.set_motors(-x/2, -(x-z)/2)
+                # self.robot.set_motors(-(x+z)/2, -x/2)
 
 
 
@@ -144,12 +150,12 @@ class Motor(Configurable):
         speed = min(max(abs(mapped_value), 0), 255)
         self._motor.setSpeed(speed)
         if mapped_value < 0:
-            self._motor.run(Adafruit_MotorHAT.FORWARD)
+            self._motor.run(Adafruit_MotorHAT.BACKWARD)
             # The two lines below are required for the Waveshare JetBot Board only
             self._driver._pwm.setPWM(self._ina,0,0)
             self._driver._pwm.setPWM(self._inb,0,speed*16)
         else:
-            self._motor.run(Adafruit_MotorHAT.BACKWARD)
+            self._motor.run(Adafruit_MotorHAT.FORWARD)
             # The two lines below are required for the Waveshare JetBot Board only
             self._driver._pwm.setPWM(self._ina,0,speed*16)
             self._driver._pwm.setPWM(self._inb,0,0)
@@ -239,4 +245,4 @@ if __name__ == '__main__':
 
 #                                                                              
 # end of file
-"""ANI717"""
+"""ORDINA"""

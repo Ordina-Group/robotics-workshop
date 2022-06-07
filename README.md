@@ -128,3 +128,4 @@ ros2 launch simulation_app autonomous_launch.py
 [Jetbot](https://jetbot.org/master/)<br/>
 [Jetbot URDF Mesh](https://github.com/aws-samples/aws-robomaker-jetbot-ros)<br/>
 [AWS Robomaker Racetrack World](https://github.com/aws-robotics/aws-robomaker-racetrack-world)<br/>
+[QEngineering Base Image Ubuntu 20.04](https://github.com/Qengineering/Jetson-Nano-Ubuntu-20-image)<br/>

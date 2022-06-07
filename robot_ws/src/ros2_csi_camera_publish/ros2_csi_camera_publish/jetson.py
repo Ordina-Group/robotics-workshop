@@ -4,10 +4,7 @@
 """ROS2 CSI Camera Image Publisher.
 
 This script publishes csi camera image to a ROS2 topic in sensor_msgs.msg/Image 
-format. 
-
-Revision History:
-        2021-11-14 (ANI717 - Animesh Bala Ani): Baseline Software.
+format. And starts rtmp stream to rtmp://localhost;1935/live/stream
 
 Example:
         $ colcon build --symlink-install && source install/local_setup.bash && ros2 run ros2_csi_camera_publish jetson
@@ -31,7 +28,7 @@ from ament_index_python.packages import get_package_share_directory
 
 #___Global Variables:
 SETTINGS = os.path.join(get_package_share_directory('ros2_csi_camera_publish'), "settings.json")
-
+rtmp_url = "rtmp://127.0.0.1:1935/live/stream"
 
 #__Functions:
 def gstreamer_pipeline(capture_width=320, capture_height=240, display_width=320,
@@ -51,6 +48,62 @@ def gstreamer_pipeline(capture_width=320, capture_height=240, display_width=320,
         "video/x-raw, format=(string)BGR ! appsink"
         % (capture_width, capture_height, framerate, flip_method, display_width, display_height)
         )
+
+# def open_ffmpeg_stream_process(self):
+#     args = (
+#         "ffmpeg -re -stream_loop -1 -f rawvideo -pix_fmt "
+#         "rgb24 -s 1920x1080 -i pipe:0 -pix_fmt yuv420p "
+#         "-f rtsp rtsp://192.168.2.55:1935/live/stream"
+#     ).split()
+#     return subprocess.Popen(args, stdin=subprocess.PIPE)
+
+
+# def capture_loop():
+#     ffmpeg_process = open_ffmpeg_stream_process()
+#     capture = cv2.VideoCapture(<video/stream>)    
+#     while True:
+#         grabbed, frame = capture.read()
+#         if not grabbed:
+#             break
+#         ffmpeg_process.stdin.write(frame.astype(np.uint8).tobytes())
+#     capture.release()
+#     ffmpeg_process.stdin.close()
+#     ffmpeg_process.wait()
+
+def start_rtmp_stream():
+    # In my mac webcamera is 0, also you can set a video file name instead, for example "/home/user/demo.mp4"
+    path = 0
+    cap = cv2.VideoCapture(path)
+
+    # gather video info to ffmpeg
+    fps = int(cap.get(cv2.CAP_PROP_FPS))
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+
+    # command and params for ffmpeg
+    command = ['ffmpeg',
+            '-y',
+            '-f', 'rawvideo',
+            '-vcodec', 'rawvideo',
+            '-pix_fmt', 'bgr24',
+            '-s', "{}x{}".format(width, height),
+            '-r', str(fps),
+            '-i', '-',
+            '-c:v', 'libx264',
+            '-pix_fmt', 'yuv420p',
+            '-preset', 'ultrafast',
+            '-f', 'flv',
+            rtmp_url]
+
+    # using subprocess and pipe to fetch frame data
+    p = subprocess.Popen(command, stdin=subprocess.PIPE)
+
+
+    while cap.isOpened():
+        ret, frame = cap.read()
+        if not ret:
+            print("frame read failed")
+            break
 
 
 #__Classes:
@@ -90,7 +143,7 @@ class CameraPublisher(Node):
             # processes image data and converts to ros 2 message
             msg = Image()
             msg.header.stamp = Node.get_clock(self).now().to_msg()
-            msg.header.frame_id = 'ANI717'
+            msg.header.frame_id = 'ORDINA'
             msg.height = np.shape(frame)[0]
             msg.width = np.shape(frame)[1]
             msg.encoding = "bgr8"
@@ -133,8 +186,10 @@ def main(args=None):
     
     # initializes node and start publishing
     rclpy.init(args=args)
+    # start_rtmp_stream()
+    # out = cv2.VideoWriter("appsrc ! video/x-raw,format=BGR,width=1920,height=1080,framerate=30/1 ! videoconvert ! video/x-raw,format=BGRx ! nvvidconv ! nvv4l2h264enc insert-vui=1 insert-sps-pps=1 ! h264parse ! rtph264pay ! udpsink host=127.0.0.1 port=5000", cv2.CAP_GSTREAMER, 0, 30, (1920,1080))
     camera_publisher = CameraPublisher(cap, publish_topic, publish_frequency)
-    rclpy.spin(camera_publisher)
+    # rclpy.spin(camera_publisher)
 
     # shuts down nose and releases everything
     camera_publisher.destroy_node()
@@ -151,4 +206,4 @@ if __name__ == '__main__':
 
 #                                                                              
 # end of file
-"""ANI717"""
+"""ORDINA"""
