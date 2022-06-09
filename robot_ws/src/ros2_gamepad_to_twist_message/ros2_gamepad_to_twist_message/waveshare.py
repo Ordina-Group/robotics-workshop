@@ -45,6 +45,7 @@ class GamepadTwist(Node):
         
         # publisher initialization
         self.publisher_ = self.create_publisher(Twist, publish_topic, 1)
+        self.publisher2 = self.create_publisher(String, '/trigger', 2)
         self.timer = self.create_timer(1/publish_frequency, self.timer_callback)
         
         # variable initialization
@@ -78,6 +79,11 @@ class GamepadTwist(Node):
             if event.code == 'ABS_X':
                 self.get_logger().info("event state value: {:.1f}".format(round(-((event.state/self.max_x)*2 - 1), 1)))
             self.get_logger().info("EventCode: "+event.code);
+
+            if event.code == 'BTN_NORTH':
+                msg = String()
+                msg.data = 'pressed'
+                self.publisher2.publish(msg)
                 
         # creates Twist message
         twist.angular.z = round(self.z, 1)

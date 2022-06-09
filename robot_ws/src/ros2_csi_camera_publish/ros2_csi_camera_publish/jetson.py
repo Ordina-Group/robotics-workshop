@@ -116,12 +116,13 @@ class CameraPublisher(Node):
     """
 
     
-    def __init__(self, cap, publish_topic='/cmd_vel', publish_frequency=100):
+    def __init__(self, cap, publish_topic='/cmd_vel', trigger_topic='/trigger', publish_frequency=100):
         super().__init__('camera_publisher')
         
         # initialize publisher
         self.publisher_ = self.create_publisher(Image, publish_topic, 1)
-        self.timer = self.create_timer(1/publish_frequency, self.timer_callback)
+        # self.timer = self.create_timer(1/publish_frequency, self.timer_callback)
+        self.subscription1 = self.create_subscription(String, trigger_topic, self.listener_callback1, 10)
         
         # set image counter and videocapture object
         self.cap = cap
@@ -134,29 +135,29 @@ class CameraPublisher(Node):
         This method captures images and publishes required data in ros 2 topic.
         
         """
+        if msg.data == 'pressed':
+            if self.cap.isOpened():
+                
+                # reads image data
+                ret, frame = self.cap.read()
 
-        if self.cap.isOpened():
+                # processes image data and converts to ros 2 message
+                msg = Image()
+                msg.header.stamp = Node.get_clock(self).now().to_msg()
+                msg.header.frame_id = 'ORDINA'
+                msg.height = np.shape(frame)[0]
+                msg.width = np.shape(frame)[1]
+                msg.encoding = "bgr8"
+                msg.is_bigendian = False
+                msg.step = np.shape(frame)[2] * np.shape(frame)[1]
+                msg.data = np.array(frame).tobytes()
+
+                # publishes message
+                self.publisher_.publish(msg)
+                self.get_logger().info('%d Images Published' % self.i)
             
-            # reads image data
-            ret, frame = self.cap.read()
-
-            # processes image data and converts to ros 2 message
-            msg = Image()
-            msg.header.stamp = Node.get_clock(self).now().to_msg()
-            msg.header.frame_id = 'ORDINA'
-            msg.height = np.shape(frame)[0]
-            msg.width = np.shape(frame)[1]
-            msg.encoding = "bgr8"
-            msg.is_bigendian = False
-            msg.step = np.shape(frame)[2] * np.shape(frame)[1]
-            msg.data = np.array(frame).tobytes()
-
-            # publishes message
-            self.publisher_.publish(msg)
-            self.get_logger().info('%d Images Published' % self.i)
-        
-        # image counter increment
-        self.i += 1
+            # image counter increment
+            self.i += 1
         
         return None
 
@@ -178,7 +179,9 @@ def main(args=None):
         flip_method = content["flip_method"]
         display_width = content["display_width"]
         display_height = content["display_height"]
-        
+    
+    trigger_topic = '/trigger'
+
     # creates OpenCV Videocapture object
     cap = cv2.VideoCapture(gstreamer_pipeline(capture_width, capture_height, 
                                               display_width, display_height,
@@ -188,8 +191,8 @@ def main(args=None):
     rclpy.init(args=args)
     # start_rtmp_stream()
     # out = cv2.VideoWriter("appsrc ! video/x-raw,format=BGR,width=1920,height=1080,framerate=30/1 ! videoconvert ! video/x-raw,format=BGRx ! nvvidconv ! nvv4l2h264enc insert-vui=1 insert-sps-pps=1 ! h264parse ! rtph264pay ! udpsink host=127.0.0.1 port=5000", cv2.CAP_GSTREAMER, 0, 30, (1920,1080))
-    camera_publisher = CameraPublisher(cap, publish_topic, publish_frequency)
-    # rclpy.spin(camera_publisher)
+    camera_publisher = CameraPublisher(cap, publish_topic, trigger_topic, publish_frequency)
+    rclpy.spin(camera_publisher)
 
     # shuts down nose and releases everything
     camera_publisher.destroy_node()

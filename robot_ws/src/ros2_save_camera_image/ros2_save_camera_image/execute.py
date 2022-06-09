@@ -21,6 +21,9 @@ import os
 import cv2
 import json
 import datetime
+import requests
+import random
+import string
 import numpy as np
 from pathlib import Path
 
@@ -29,6 +32,8 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
+
+
 
 
 #___Global Variables:
@@ -76,10 +81,25 @@ class ImageSubscriber(Node):
         frame = np.reshape(msg.data, (height, width, channel))
         self.get_logger().info("Image Received")
         
+        image_name = self.get_random_string(12) + '.jpg'
+
+        url = "https://fa-robotica-johnny-5.azurewebsites.net/api/robotica-picture-validation?" \
+              "code=LgySGj2IP9aZ7L3sS7nHVHVUNv2ZqPuMhSfQwPPQZVgpAzFuJV7eFQ==&filename={0}&robotName=robot1".format(image_name)
+
+        cv2.imwrite(os.path.join(self.image_folder, image_name), frame)
+
+        files = {'F': (image_name, open(self.image_folder + '/' + image_name, "rb"), 'image/jpeg')}
+
+        response = requests.post(url, files=files)
+
+        self.get_logger().info(response.text)
+        self.get_logger().info("Photo send to cloud")
+
         # write image with annotation in name
-        cv2.imwrite(os.path.join(self.image_folder, '{0:07d}_z{1:02d}_x{2:02d}.jpg'.format(self.image_count, self.z, self.x)), frame)
+        # cv2.imwrite(os.path.join(self.image_folder, '{0:07d}_z{1:02d}_x{2:02d}.jpg'.format(self.image_count, self.z, self.x)), frame)
         self.image_count += 1
-    
+
+        os.remove(os.path.join(self.image_folder, image_name))
     
     def listener_callback2(self, msg):
         """Listener Callback Function 1
