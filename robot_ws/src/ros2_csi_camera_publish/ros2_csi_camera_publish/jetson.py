@@ -24,6 +24,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from ament_index_python.packages import get_package_share_directory
+from std_msgs.msg import String
 
 
 #___Global Variables:
@@ -129,7 +130,7 @@ class CameraPublisher(Node):
         self.i = 0
 
         
-    def timer_callback(self):
+    def listener_callback1(self, msg):
         """Timer Callback Function
         
         This method captures images and publishes required data in ros 2 topic.

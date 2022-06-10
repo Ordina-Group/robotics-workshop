@@ -26,6 +26,7 @@ import rclpy
 from rclpy.node import Node
 from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
+from std_msgs.msg import String
 
 
 #___Global Variables:
