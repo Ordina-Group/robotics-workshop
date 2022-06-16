@@ -20,7 +20,7 @@ draw.rectangle((0, 0, width, height), outline=0, fill=0)
 font = ImageFont.truetype("/usr/share/fonts/truetype/ubuntu/UbuntuMono-B.ttf", 16, encoding="unic")
 
 while True:
-    ip_address = subprocess.check_output("hostname -I | cut -d\' \' -f1", shell=True)
+    ip_address = subprocess.check_output("hostname -I | cut -d\' \' -f2", shell=True)
     ssid = subprocess.check_output("iwgetid", shell=True).decode('utf-8').split('"')[1]
 
     draw.text((0, 10), str(ip_address.decode('utf-8')), font=font, fill=255)
