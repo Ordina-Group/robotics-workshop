@@ -1,0 +1,10 @@
+{
+    "publish_topic": "/image",
+    "publish_frequency": 100,
+    "capture_width": 320,
+    "capture_height": 240,
+    "framerate": 30,
+    "flip_method": 0,
+    "display_width": 320,
+    "display_height": 240
+}

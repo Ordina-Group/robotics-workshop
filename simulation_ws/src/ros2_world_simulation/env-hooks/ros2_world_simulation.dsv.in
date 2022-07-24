@@ -1,2 +1,0 @@
-prepend-non-duplicate;GAZEBO_MODEL_PATH;share/ros2_world_simulation/models
-prepend-non-duplicate;GAZEBO_MODEL_PATH;share/ros2_world_simulation/worlds
