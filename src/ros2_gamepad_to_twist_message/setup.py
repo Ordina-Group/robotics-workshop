@@ -25,6 +25,7 @@ setup(
         'console_scripts': [
             'logitech = ros2_gamepad_to_twist_message.logitech:main',
             'waveshare = ros2_gamepad_to_twist_message.waveshare:main',
+            'playstation = ros2_gamepad_to_twist_message.playstation:main',
         ],
     },
 )

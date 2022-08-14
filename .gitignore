@@ -63,3 +63,10 @@ Training
 Blog
 About
 
+/venv/
+/.idea/.gitignore
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/inspectionProfiles/profiles_settings.xml
+/.idea/RoboticaWorkshopRobot.iml
+/.idea/vcs.xml
