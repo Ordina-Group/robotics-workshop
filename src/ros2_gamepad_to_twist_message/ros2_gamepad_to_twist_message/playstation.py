@@ -60,6 +60,11 @@ class GamepadTwist(Node):
         # controller.init()
         # controller.joystick.init()
 
+    def neg_n(self, x):
+    """ Toggle value from - to +, or + to -. """
+            neg = x * (-1)
+            return neg
+
     def timer_callback(self):
         """Timer Callback Function
         
@@ -69,7 +74,6 @@ class GamepadTwist(Node):
 
         # initializes Twist message
         twist = Twist()
-
         axis = {}
 
         # these are the identifiers for the PS4's accelerometers
@@ -94,7 +98,7 @@ class GamepadTwist(Node):
                 if (event.axis ==2):
                     if(event.value > 0.1 or event.value < -0.2):
                         rot_z = round(event.value,1)
-                        self.z = rot_z
+                        self.z = self.neg_n(rot_z)
                         # self.get_logger().info(f" self.z = {self.z}")
                         # self.get_logger().info(f"- event value = {event.value}")
                     else:
@@ -104,7 +108,7 @@ class GamepadTwist(Node):
                 if (event.axis ==1):
                     if(event.value > 0.1 or event.value < -0.2):
                         rot_x = round(event.value,1)
-                        self.x = rot_x
+                        self.x = self.neg_n(rot_x)
                         # self.get_logger().info(f"self.z = {self.x}")
                         # self.get_logger().info(f"event value = {event.value}")
                     else:
@@ -117,7 +121,7 @@ class GamepadTwist(Node):
                     msg = String()
                     msg.data = 'pressed'
                     self.publisher2.publish(msg)
-                    self.get_logger().info("baclhblack")
+                    self.get_logger().info(" [] Button pressed")
 
         rot_x = axis[AXIS_X]
         rot_y = axis[AXIS_Y]
@@ -125,13 +129,10 @@ class GamepadTwist(Node):
          # creates Twist message
         twist.angular.z = round(self.z, 1)
         twist.linear.x = round(self.x, 1)
-    
 
         # publishes message
         self.publisher_.publish(twist)
         # self.get_logger().info("Angular Z: {:.1f}, Linear X: {:.1f}".format(rot_y, rot_x))
-
-
         return None
 
 
