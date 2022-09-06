@@ -26,6 +26,10 @@ from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
 from std_msgs.msg import String
 
+import sys
+# ___Trick to solve pygame video init error
+os.environ["SDL_VIDEODRIVER"] = "dummy"
+
 
 # ___Global Variables:
 SETTINGS = os.path.join(get_package_share_directory('ros2_gamepad_to_twist_message'), "settings.json")
@@ -52,21 +56,32 @@ class GamepadTwist(Node):
         self.z = 0.0
         self.x = 0.0
 
-        # controller initialization
-        controller.init()
-        controller.joystick.init()
+        # # controller initialization
+        # controller.init()
+        # controller.joystick.init()
 
     def timer_callback(self):
+        """Timer Callback Function
+        
+        This method publishes gamepad data as Twist message.
+        
+        """
+
+        # initializes Twist message
+        twist = Twist()
 
         axis = {}
 
         # these are the identifiers for the PS4's accelerometers
-        AXIS_X = 3
-        AXIS_Y = 4
+        AXIS_X = 2
+        AXIS_Y = 1
 
         # variables we'll store the rotations in, initialised to zero
         rot_x = 0.0
         rot_y = 0.0
+
+        rot_x_last = 0.0
+        rot_y_last = 0.0
 
         # copy rot_x/rot_y into axis[] in case we don't read any
         axis[AXIS_X] = rot_x
@@ -75,19 +90,47 @@ class GamepadTwist(Node):
         # retrieve any events from the controller
         for event in controller.event.get():
             if event.type == controller.JOYAXISMOTION:
-                axis[event.axis] = round(event.value, 2)
-                # TODO
-                # hier moeten die axis zo gemaakt worden zoals bij de waveshare
-                # wat er nu staat is geen oplossing of iets
+                # Move Forward and Backward
+                if (event.axis ==2):
+                    if(event.value > 0.1 or event.value < -0.2):
+                        rot_z = round(event.value,1)
+                        self.z = rot_z
+                        # self.get_logger().info(f" self.z = {self.z}")
+                        # self.get_logger().info(f"- event value = {event.value}")
+                    else:
+                        self.z =0.0
 
+                # Move Left And Right
+                if (event.axis ==1):
+                    if(event.value > 0.1 or event.value < -0.2):
+                        rot_x = round(event.value,1)
+                        self.x = rot_x
+                        # self.get_logger().info(f"self.z = {self.x}")
+                        # self.get_logger().info(f"event value = {event.value}")
+                    else:
+                        self.x =0.0
+
+
+            # Test button pressed
             if event.type == controller.JOYBUTTONDOWN:
                 if event.button == 0:
                     msg = String()
                     msg.data = 'pressed'
                     self.publisher2.publish(msg)
+                    self.get_logger().info("baclhblack")
 
         rot_x = axis[AXIS_X]
         rot_y = axis[AXIS_Y]
+
+         # creates Twist message
+        twist.angular.z = round(self.z, 1)
+        twist.linear.x = round(self.x, 1)
+    
+
+        # publishes message
+        self.publisher_.publish(twist)
+        # self.get_logger().info("Angular Z: {:.1f}, Linear X: {:.1f}".format(rot_y, rot_x))
+
 
         return None
 
@@ -96,6 +139,10 @@ def main(args=None):
     """
         This is the Main Method.
     """
+    controller.init()
+    controller.joystick.init()
+    joysticks = [controller.joystick.Joystick(x) for x in range(controller.joystick.get_count())]
+
 
     # parse settings from json file
     with open(SETTINGS) as fp:
@@ -117,3 +164,4 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
+
