@@ -16,17 +16,15 @@ Example:
 
 """
 
-import os
 import json
+import os
 import pygame as controller
-
 import rclpy
-from rclpy.node import Node
-from geometry_msgs.msg import Twist
 from ament_index_python.packages import get_package_share_directory
+from geometry_msgs.msg import Twist
+from rclpy.node import Node
 from std_msgs.msg import String
 
-import sys
 # ___Trick to solve pygame video init error
 os.environ["SDL_VIDEODRIVER"] = "dummy"
 
@@ -59,12 +57,16 @@ class GamepadTwist(Node):
         # # controller initialization
         # controller.init()
         # controller.joystick.init()
+    def neg_n(self, x):
+        """ Toggle value from - to +, or + to -. """
+        neg = x * (-1)
+        return neg
 
-    def timer_callback(self):
+def timer_callback(self):
         """Timer Callback Function
-        
+
         This method publishes gamepad data as Twist message.
-        
+
         """
 
         # initializes Twist message
@@ -94,7 +96,7 @@ class GamepadTwist(Node):
                 if (event.axis ==2):
                     if(event.value > 0.1 or event.value < -0.2):
                         rot_z = round(event.value,1)
-                        self.z = rot_z
+                        self.z = self.neg_n(rot_z)
                         # self.get_logger().info(f" self.z = {self.z}")
                         # self.get_logger().info(f"- event value = {event.value}")
                     else:
@@ -104,7 +106,7 @@ class GamepadTwist(Node):
                 if (event.axis ==1):
                     if(event.value > 0.1 or event.value < -0.2):
                         rot_x = round(event.value,1)
-                        self.x = rot_x
+                        self.x = self.neg_n(rot_x)
                         # self.get_logger().info(f"self.z = {self.x}")
                         # self.get_logger().info(f"event value = {event.value}")
                     else:
@@ -117,7 +119,7 @@ class GamepadTwist(Node):
                     msg = String()
                     msg.data = 'pressed'
                     self.publisher2.publish(msg)
-                    self.get_logger().info("baclhblack")
+                    self.get_logger().info(" [] Button pressed")
 
         rot_x = axis[AXIS_X]
         rot_y = axis[AXIS_Y]
@@ -125,7 +127,7 @@ class GamepadTwist(Node):
          # creates Twist message
         twist.angular.z = round(self.z, 1)
         twist.linear.x = round(self.x, 1)
-    
+
 
         # publishes message
         self.publisher_.publish(twist)
