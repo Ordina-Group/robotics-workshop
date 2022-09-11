@@ -54,15 +54,12 @@ class GamepadTwist(Node):
         self.z = 0.0
         self.x = 0.0
 
-        # # controller initialization
-        # controller.init()
-        # controller.joystick.init()
     def neg_n(self, x):
         """ Toggle value from - to +, or + to -. """
         neg = x * (-1)
         return neg
 
-def timer_callback(self):
+    def timer_callback(self):
         """Timer Callback Function
 
         This method publishes gamepad data as Twist message.
@@ -72,48 +69,25 @@ def timer_callback(self):
         # initializes Twist message
         twist = Twist()
 
-        axis = {}
-
-        # these are the identifiers for the PS4's accelerometers
-        AXIS_X = 2
-        AXIS_Y = 1
-
-        # variables we'll store the rotations in, initialised to zero
-        rot_x = 0.0
-        rot_y = 0.0
-
-        rot_x_last = 0.0
-        rot_y_last = 0.0
-
-        # copy rot_x/rot_y into axis[] in case we don't read any
-        axis[AXIS_X] = rot_x
-        axis[AXIS_Y] = rot_y
-
         # retrieve any events from the controller
         for event in controller.event.get():
             if event.type == controller.JOYAXISMOTION:
                 # Move Forward and Backward
-                if (event.axis ==2):
-                    if(event.value > 0.1 or event.value < -0.2):
-                        rot_z = round(event.value,1)
+                if event.axis == 2:
+                    if event.value > 0.1 or event.value < -0.2:
+                        rot_z = round(event.value, 1)
                         self.z = self.neg_n(rot_z)
-                        # self.get_logger().info(f" self.z = {self.z}")
-                        # self.get_logger().info(f"- event value = {event.value}")
                     else:
-                        self.z =0.0
+                        self.z = 0.0
 
                 # Move Left And Right
-                if (event.axis ==1):
-                    if(event.value > 0.1 or event.value < -0.2):
-                        rot_x = round(event.value,1)
+                if event.axis == 1:
+                    if event.value > 0.1 or event.value < -0.2:
+                        rot_x = round(event.value, 1)
                         self.x = self.neg_n(rot_x)
-                        # self.get_logger().info(f"self.z = {self.x}")
-                        # self.get_logger().info(f"event value = {event.value}")
                     else:
-                        self.x =0.0
+                        self.x = 0.0
 
-
-            # Test button pressed
             if event.type == controller.JOYBUTTONDOWN:
                 if event.button == 0:
                     msg = String()
@@ -121,18 +95,12 @@ def timer_callback(self):
                     self.publisher2.publish(msg)
                     self.get_logger().info(" [] Button pressed")
 
-        rot_x = axis[AXIS_X]
-        rot_y = axis[AXIS_Y]
-
-         # creates Twist message
+        # Creates Twist message
         twist.angular.z = round(self.z, 1)
         twist.linear.x = round(self.x, 1)
 
-
-        # publishes message
+        # Publishes message
         self.publisher_.publish(twist)
-        # self.get_logger().info("Angular Z: {:.1f}, Linear X: {:.1f}".format(rot_y, rot_x))
-
 
         return None
 
@@ -144,7 +112,6 @@ def main(args=None):
     controller.init()
     controller.joystick.init()
     joysticks = [controller.joystick.Joystick(x) for x in range(controller.joystick.get_count())]
-
 
     # parse settings from json file
     with open(SETTINGS) as fp:
