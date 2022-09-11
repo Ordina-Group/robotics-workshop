@@ -1,0 +1,8 @@
+{
+    "image_topic": "/image",
+    "twist_topic": "/cmd_vel",
+    "data_directory": "../images",
+    "azure_url": "https://fa-robotics-johnny-5.azurewebsites.net/api/robotics-picture-validation",
+    "azure_code": "OesRQrDFfpXQ9PcvECM50OrxhNQWO-pc06XAZSYlpxjmAzFu2x5EzQ==",
+    "robot_name": "Batmobile"
+}
