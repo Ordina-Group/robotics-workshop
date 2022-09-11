@@ -4,17 +4,19 @@
 </p>
 
 <p align="justify">
-Contains ROS2 packages to run robot car to collect annotated camera images while controlled by Gamepad. Also contains packages to run a robot car autonomously with a trained neural network.
+Contains ROS2 packages to run robot car to collect annotated camera images while controlled by Gamepad.
 </p>
 
 
 ## Quick Links
-[Robot Workspace](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws)
+* [Robot Workspace](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src)
+* [Robot Workshop Documentation](https://github.com/OrdinaNederland/robotics-docs/wiki)
+
 
 ## Colaborators
 * [Ricky van Rijn](https://www.linkedin.com/in/rickyvanrijn) (Software Development)<br/>
 * [Remco van Gorsel](https://www.linkedin.com/in/remco-van-gorsel) (Software Development)<br/>
-* [Louigimar Richardson](https://nl.linkedin.com/in/louigimar-richardson) (Software Development)
+* [Louigimar Richardson](https://nl.linkedin.com/in/louigimar-richardson-04265a106) (Software Development)
 
 ## Design Diagram
 <img src="https://github.com/OrdinaNederland/robotics-workshop/blob/main/Robot%20Workspace.png" alt="Robot Workspace Diagram" class="inline"/><br/>
@@ -35,32 +37,25 @@ Robotics Platform
 
 ## Developed ROS2 Packages
 #### Common Packages:<br/>
-* [ros2_deep_learning_model_to_twist_message](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws/src/ros2_deep_learning_to_twist_message)<br/>
-* [ros2_save_camera_image](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws/src/ros2_save_camera_image)<br/>
+* [ros2_deep_learning_model_to_twist_message](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src/ros2_deep_learning_to_twist_message)<br/>
+* [ros2_save_camera_image](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src/ros2_save_camera_image)<br/>
 
 #### Robot Packages:<br/>
-* [ros2_csi_camera_publish](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws/src/ros2_csi_camera_publish)<br/>
-* [ros2_gamepad_to_twist_message](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws/src/ros2_gamepad_to_twist_message)<br/>
-* [ros2_twist_message_to_robot_motion](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws/src/ros2_twist_message_to_robot_motion)<br/>
+* [ros2_csi_camera_publish](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src/ros2_csi_camera_publish)<br/>
+* [ros2_gamepad_to_twist_message](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src/ros2_gamepad_to_twist_message)<br/>
+* [ros2_twist_message_to_robot_motion](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src/ros2_twist_message_to_robot_motion)<br/>
 
-## [Robot Workspace](https://github.com/OrdinaNederland/RoboticaWorkshopRobot/tree/main/robot_ws) (JetBot)
+## [Robot Workspace](https://github.com/OrdinaNederland/robotics-workshop/tree/main/src) (JetBot)
 #### Download Workspace
 ```
-git clone https://github.com/OrdinaNederland/RoboticaWorkshopRobot
+git clone https://github.com/OrdinaNederland/robotics-workshop
 ```
 
 #### Build, Source & Launch Package (Gamepad)
 ```
-cd ~/RoboticaWorkshopRobot/robot_ws/
+cd ~/robotics-workshop
 colcon build --symlink-install && source install/local_setup.bash
-ros2 launch robot_app gamepad_launch.py
-```
-
-#### Build, Source & Launch Package (Self Driving)
-```
-cd ~/RoboticaWorkshopRobot/robot_ws/
-colcon build --symlink-install && source install/local_setup.bash
-ros2 launch robot_app autonomous_launch.py
+ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py gamepad_type:=playstation
 ```
 
 ## Acknowledgement
