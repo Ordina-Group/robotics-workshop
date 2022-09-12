@@ -1,6 +1,7 @@
 # Prepare for creating service
 * Make a folder on the robot desktop called: start_up
 * Place the ip_display.py file in just made folder
+* Also place the start_display.sh in the just made folder
 
 # Install Python Pacakge
 ```
