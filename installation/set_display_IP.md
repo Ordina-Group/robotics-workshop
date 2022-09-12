@@ -2,6 +2,11 @@
 * Make a folder on the robot desktop called: start_up
 * Place the ip_display.py file in just made folder
 
+# Install Python Pacakge
+```
+pip3 install Adafruit-SSD1306
+```
+
 # Create service
 ```
 sudo systemctl edit --force --full start_display.service
