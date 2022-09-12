@@ -3,6 +3,11 @@
 * Place the ip_display.py file in just made folder
 * Also place the start_display.sh in the just made folder
 
+# Permission for script
+```
+chmod +x /home/jetson/Desktop/start_up/start_display.sh
+```
+
 # Install Python Pacakge
 ```
 pip3 install Adafruit-SSD1306
