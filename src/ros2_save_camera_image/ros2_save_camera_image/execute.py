@@ -48,12 +48,12 @@ class ImageSubscriber(Node):
         super().__init__('image_subscriber')
 
         # image topic subscriber initialization
-        self.subscription1 = self.create_subscription(Image, image_topic, self.listener_callback1, 10)
+        self.subscription1 = self.create_subscription(Image, image_topic, self.listener_callback1, 1)
         self.subscription1  # prevent unused variable warning
         self.image_count = 0
 
         # twist topic subscriber initialization
-        self.subscription2 = self.create_subscription(Twist, twist_topic, self.listener_callback2, 10)
+        self.subscription2 = self.create_subscription(Twist, twist_topic, self.listener_callback2, 1)
         self.subscription2
 
         # variable initialization
