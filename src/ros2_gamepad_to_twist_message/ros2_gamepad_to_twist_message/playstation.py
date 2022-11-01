@@ -72,15 +72,8 @@ class GamepadTwist(Node):
         # retrieve any events from the controller
         for event in controller.event.get():
             if event.type == controller.JOYAXISMOTION:
+                self.get_logger().info(f"Event axis: {event.axis}")
                 # Move Forward and Backward
-                if event.axis == 2:
-                    if event.value > 0.1 or event.value < -0.2:
-                        rot_z = round(event.value, 1)
-                        self.z = self.neg_n(rot_z)
-                    else:
-                        self.z = 0.0
-
-                # Move Left And Right
                 if event.axis == 1:
                     if event.value > 0.1 or event.value < -0.2:
                         rot_x = round(event.value, 1)
@@ -88,6 +81,14 @@ class GamepadTwist(Node):
                     else:
                         self.x = 0.0
 
+                # Move Left And Right
+                if event.axis == 2:
+                    if event.value > 0.1 or event.value < -0.2:
+                        rot_z = round(event.value, 1)
+                        self.z = rot_z               
+                    else:
+                        self.z = 0.0
+               
             if event.type == controller.JOYBUTTONDOWN:
                 if event.button == 0:
                     msg = String()
@@ -103,7 +104,6 @@ class GamepadTwist(Node):
         self.publisher_.publish(twist)
 
         return None
-
 
 def main(args=None):
     """
@@ -133,4 +133,3 @@ def main(args=None):
 
 if __name__ == '__main__':
     main()
-
