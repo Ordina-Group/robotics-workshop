@@ -86,11 +86,11 @@ class Twist_to_Motion(Node):
         if x == 0:
             # rotate right
             if z > 0:
-                self.robot.set_motors(z, 0)
+                self.robot.set_motors(-z, 0)
                 # self.robot.set_motors(0, -z)
             # rotate left
             elif z < 0:
-                self.robot.set_motors(0, -z)
+                self.robot.set_motors(0, z)
                 # self.robot.set_motors(-z, 0)
         
         # moving forward
