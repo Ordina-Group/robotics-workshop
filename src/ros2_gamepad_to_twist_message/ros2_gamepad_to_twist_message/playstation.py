@@ -40,7 +40,8 @@ class GamepadTwist(Node):
 
     """
 
-    def __init__(self, publish_topic='/cmd_vel', publish_frequency=100):
+    #The place_holder needs to be replaced with a new topic 
+    def __init__(self, publish_topic='{place_holder}', publish_frequency=100):
         super().__init__('gamepad_publisher')
 
         # publisher initialization
