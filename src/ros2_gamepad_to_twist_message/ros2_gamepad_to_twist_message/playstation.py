@@ -47,31 +47,12 @@ class GamepadTwist(Node):
         self.publisher_ = self.create_publisher(Twist, publish_topic, 1)
         self.publisher2 = self.create_publisher(String, '/trigger', 2)
         self.timer = self.create_timer(1 / publish_frequency, self.timer_callback)
-        self.subscribe = self.create_subscription(Twist, '/topic_thalia', self.listener_callback, 1)
 
         # variable initialization
         self.max_z = 1
         self.max_x = 1
         self.z = 0.0
         self.x = 0.0
-        
-    def listener_callback(self, twist_msg):
-        """Listener Callback Function  """
-        twist = Twist()
-
-        twist.angular.z = round(twist_msg.angular.z, 1)
-        twist.linear.x = round(twist_msg.linear.x, 1)
-        # Make algorithm to check if key is 'left' pressed.
-        
-        # Make algorithm to check if key is 'right' pressed.
-        
-        # Make algorithm to check if key is 'forward' pressed.
-        
-        # Make algorithm to check if key is 'backward' pressed.
-    
-        # Make the return the desired outcome
-        return "This outcome is the desired output"
-        
         
 
     def neg_n(self, x):

@@ -43,7 +43,7 @@ class Twist_to_Motion(Node):
     
     """
 
-    def __init__(self, subscribe_topic='/cmd_vel', x_calibration=0.25, z_calibration=0.25):
+    def __init__(self, subscribe_topic='/topic_motion', x_calibration=0.25, z_calibration=0.25):
         
         super().__init__('twist_to_motion')
         
