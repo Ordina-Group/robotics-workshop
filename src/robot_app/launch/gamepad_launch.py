@@ -59,17 +59,17 @@ def generate_launch_description():
     # Specify the actions
     gamepad_to_twist_cmd = Node(
         package = 'ros2_gamepad_to_twist_message',
-        node_executable = gamepad_type,
+        executable = gamepad_type,
         name='gamepad_to_twist')
     
     twist_to_motion_cmd = Node(
         package = 'ros2_twist_message_to_robot_motion',
-        node_executable = robot_type,
+        executable = robot_type,
         name='twist_to_robot_motion')
     
     save_image_cmd = Node(
         package = 'ros2_save_camera_image',
-        node_executable = 'execute',
+        executable = 'execute',
         name='save_camera_image')
     
     cam2image_cmd = Node(
@@ -81,7 +81,7 @@ def generate_launch_description():
     csijetson_cmd = Node(
         condition=IfCondition(csijetson),
         package = 'ros2_csi_camera_publish',
-        node_executable = 'jetson',
+        executable = 'jetson',
         name='csi_camera_publish')
 
         
