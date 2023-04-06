@@ -96,8 +96,16 @@ def main(args=None):
         flip_method = content["flip_method"]
         display_width = content["display_width"]
         display_height = content["display_height"]
+    rtsp_location = "172.27.4.120:8554/stream"
 
-    cap = nano.Camera(flip=flip_method, width=capture_width, height=capture_height, fps=framerate)
+    cap = nano.Camera( 
+        camera_type=0,
+        flip=flip_method,
+        source=rtsp_location,
+        width=capture_width, 
+        height=capture_height, 
+        fps=framerate
+        )
 
     # initializes node and start publishing
     rclpy.init(args=args)
