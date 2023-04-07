@@ -18,6 +18,7 @@ import os
 import nanocamera as nano
 import json
 import numpy as np
+import cv2
 
 import rclpy
 from rclpy.node import Node
@@ -100,12 +101,24 @@ def main(args=None):
 
     cap = nano.Camera( 
         camera_type=0,
+        device_id=0,
         flip=flip_method,
-        source=rtsp_location,
+        # source=rtsp_location,
         width=capture_width, 
         height=capture_height, 
         fps=framerate
         )
+    # soort example van de nanocamera library. if we use only the cap.read() we can send it to a ros2 topic(maybe)
+    while cap.isReady():
+        try:
+            # read the camera image
+            frame = cap.read()
+            # display the frame
+            cv2.imshow("Video Frame", frame)
+            if cv2.waitKey(25) & 0xFF == ord('q'):
+                break
+        except KeyboardInterrupt:
+            break
 
     # initializes node and start publishing
     rclpy.init(args=args)
