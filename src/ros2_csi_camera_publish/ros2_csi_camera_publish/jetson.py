@@ -18,7 +18,8 @@ import os
 import nanocamera as nano
 import json
 import numpy as np
-import cv2
+from subprocess import call
+import socket
 
 import rclpy
 from rclpy.node import Node
@@ -97,37 +98,16 @@ def main(args=None):
         flip_method = content["flip_method"]
         display_width = content["display_width"]
         display_height = content["display_height"]
-    rtsp_location = "172.27.4.120:8554/stream"
 
-    cap = nano.Camera( 
-        camera_type=0,
-        device_id=0,
-        flip=flip_method,
-        # source=rtsp_location,
-        width=capture_width, 
-        height=capture_height, 
-        fps=framerate
-        )
-    # soort example van de nanocamera library. if we use only the cap.read() we can send it to a ros2 topic(maybe)
-    while cap.isReady():
-        try:
-            # read the camera image
-            frame = cap.read()
-            # display the frame
-            cv2.imshow("Video Frame", frame)
-            if cv2.waitKey(25) & 0xFF == ord('q'):
-                break
-        except KeyboardInterrupt:
-            break
-
-    # initializes node and start publishing
-    rclpy.init(args=args)
-    camera_publisher = CameraPublisher(cap, publish_topic, publish_frequency)
-    rclpy.spin(camera_publisher)
-
-    # shuts down nose and releases everything
-    camera_publisher.destroy_node()
-    rclpy.shutdown()
+    hostname=socket.gethostname()
+    IPAddr=socket.gethostbyname(hostname)
+    try:
+        call(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(IPAddr)])
+        print("rtsp server is :\n rtsp://{IPAddr}:8554/stream/raytesnel")
+        # TODO let's change '/stream/raytesnel' to a simple password or so and recompile it, 
+        # plus it stops at the call. need to do it in background.
+    except Exception as e:
+        print("failed to set up rtsp server error :\n {e}")
 
     return None
 
