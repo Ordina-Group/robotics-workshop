@@ -18,7 +18,7 @@ import os
 import nanocamera as nano
 import json
 import numpy as np
-from subprocess import call
+import subprocess 
 import socket
 
 import rclpy
@@ -32,62 +32,27 @@ SETTINGS = os.path.join(get_package_share_directory('ros2_csi_camera_publish'), 
 
 # __Classes:
 class CameraPublisher(Node):
-    """Camera Publisher Class.
 
-    This class contains all methods to publish csi camera data as 
-    sensor_msgs.msg/Image format. 
-    
-    """
-
-    def __init__(self, cap, publish_topic='/cmd_vel', publish_frequency=100):
+    def __init__(self):
         super().__init__('camera_publisher')
+        self.create_livestream()
 
-        # initialize publisher
-        self.publisher_ = self.create_publisher(Image, publish_topic, 1)
-        self.timer = self.create_timer(1/publish_frequency, self.timer_callback)
 
-        # set image counter
-        self.cap = cap
-        self.i = 0
+    def create_livestream(self):
 
-    def timer_callback(self):
-        """Timer Callback Function
-        
-        This method captures images and publishes required data in ros 2 topic.
-        
-        """
+        hostname=socket.gethostname()
+        IPAddr=socket.gethostbyname(hostname)
 
-        if self.cap.isReady():
-            # reads image data
-            frame = self.cap.read()
-
-            # processes image data and converts to ros 2 message
-            msg_image = Image()
-            msg_image.header.stamp = Node.get_clock(self).now().to_msg()
-            msg_image.header.frame_id = 'ORDINA'
-            msg_image.height = np.shape(frame)[0]
-            msg_image.width = np.shape(frame)[1]
-            msg_image.encoding = "bgr8"
-            msg_image.is_bigendian = False
-            msg_image.step = np.shape(frame)[2] * np.shape(frame)[1]
-            msg_image.data = np.array(frame).tobytes()
-
-            self.publisher_.publish(msg_image)
-            self.get_logger().info('%d Image published to image topic' % self.i)
-
-        # image counter increment
-        self.i += 1
-
-        return None
+        try:
+            subprocess.Popen(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(IPAddr)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+            print("rtsp server is :\n rtsp://{IPAddr}:8554/stream/raytesnel")
+        except Exception as e:
+            print("failed to set up rtsp server error :\n {e}")
 
 
 # ___Main Method:
 def main(args=None):
-    """This is the Main Method.
-    
-    """
 
-    # parse settings from json file
     with open(SETTINGS) as fp:
         content = json.load(fp)
         publish_topic = content["publish_topic"]
@@ -99,17 +64,12 @@ def main(args=None):
         display_width = content["display_width"]
         display_height = content["display_height"]
 
-    hostname=socket.gethostname()
-    IPAddr=socket.gethostbyname(hostname)
-    try:
-        call(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(IPAddr)])
-        print("rtsp server is :\n rtsp://{IPAddr}:8554/stream/raytesnel")
-        # TODO let's change '/stream/raytesnel' to a simple password or so and recompile it, 
-        # plus it stops at the call. need to do it in background.
-    except Exception as e:
-        print("failed to set up rtsp server error :\n {e}")
+    rclpy.init(args=args)
+    livestream = CameraPublisher()
+    rclpy.spin(livestream)
 
-    return None
+    livestream.destroy_node()
+    rclpy.shutdown()
 
 
 # ___Driver Program:

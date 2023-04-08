@@ -72,7 +72,7 @@ main (int argc, char *argv[])
   gst_rtsp_media_factory_set_shared (factory, TRUE);
 
   /* attach the test factory to the /test url */
-  gst_rtsp_mount_points_add_factory (mounts, "/stream/raytesnel", factory);
+  gst_rtsp_mount_points_add_factory (mounts, "/robotstream", factory);
 
   /* don't need the ref to the mapper anymore */
   g_object_unref (mounts);
