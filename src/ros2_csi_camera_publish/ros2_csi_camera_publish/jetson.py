@@ -39,15 +39,15 @@ class CameraPublisher(Node):
 
 
     def create_livestream(self):
-
-        hostname=socket.gethostname()
-        IPAddr=socket.gethostbyname(hostname)
-
         try:
-            subprocess.Popen(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(IPAddr)], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
-            print("rtsp server is :\n rtsp://{IPAddr}:8554/stream/raytesnel")
+            subprocess.Popen(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(self.get_ip_address())], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         except Exception as e:
             print("failed to set up rtsp server error :\n {e}")
+
+
+    def get_ip_address(self):
+        cmd = "ifconfig %s | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'" % 'wlan0'
+        return subprocess.check_output(cmd, shell=True).decode('ascii')[:-1]
 
 
 # ___Main Method:
