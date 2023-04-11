@@ -31,6 +31,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
+from std_msgs.msg import String
 from ament_index_python.packages import get_package_share_directory
 
 # Global Variables:
@@ -42,6 +43,12 @@ class ImageSubscriber(Node):
 
     def __init__(self, cloud_url, robot_name, image_topic='/image', twist_topic='/cmd_vel'):
         super().__init__('image_subscriber')
+
+        self.subscription = self.create_subscription(
+            String,
+            '/trigger',
+            self.manual_update,
+            1)
 
         # variable initialization
         self.cloud_url = cloud_url
@@ -56,13 +63,34 @@ class ImageSubscriber(Node):
         jsonRobot = {'name': self.robot_name,
                      'liveStream': 'rtsp://{0}:8554/robotstream'.format(self.get_ip_address())}
 
-        response = requests.post(url, json=jsonRobot)
+        try:
+            response = requests.post(url, json=jsonRobot, timeout=10)
+            self.get_logger().info("Status code: " + str(response.status_code))
+        except Exception as e:
+            self.get_logger().info("Back-end couldn't be reached: ")
 
-        self.get_logger().info(str(response.status_code))
+
+    def update_to_cloud(self):
+        url = "{0}/robot".format(self.cloud_url)
+
+        jsonRobot = {'name': self.robot_name,
+                     'liveStream': 'rtsp://{0}:8554/robotstream'.format(self.get_ip_address())}
+
+        try:
+            response = requests.put(url, json=jsonRobot, timeout=10)
+            self.get_logger().info("Status code: " + str(response.status_code))
+        except Exception as e:
+            self.get_logger().info("Back-end couldn't be reached: ")
+        
 
     def get_ip_address(self):
         cmd = "ifconfig %s | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'" % 'wlan0'
         return subprocess.check_output(cmd, shell=True).decode('ascii')[:-1]
+    
+
+    def manual_update(self, msg):
+        if msg.data == 'register':
+            self.update_to_cloud()
 
 
 # Main Method:
