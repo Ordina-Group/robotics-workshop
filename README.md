@@ -54,8 +54,14 @@ git clone https://github.com/OrdinaNederland/robotics-workshop
 #### Build, Source & Launch Package (Gamepad)
 ```
 cd ~/robotics-workshop
+chmod +x host_rtsp_server
 colcon build --symlink-install && source install/local_setup.bash
 ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py gamepad_type:=playstation
+```
+
+#### first time building (needed for livestream gstreamer):
+```
+sudo apt-get install libgstrtspserver-1.0 libgstreamer1.0-dev
 ```
 
 ## Acknowledgement
