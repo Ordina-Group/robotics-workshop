@@ -59,9 +59,11 @@ class ImageSubscriber(Node):
 
     def register_to_cloud(self):
         url = "{0}/robot".format(self.cloud_url)
+        ipAddress = self.get_ip_address()
 
         jsonRobot = {'name': self.robot_name,
-                     'liveStream': 'rtsp://{0}:8554/robotstream'.format(self.get_ip_address())}
+                     'liveStream': 'http://localhost:8888/{0}/stream.m3u8'.format(self.robot_name),
+                     'rtspStream': 'rtsp://{0}:8554/robotstream'.format(ipAddress)}
 
         try:
             response = requests.post(url, json=jsonRobot, timeout=10)
@@ -72,9 +74,11 @@ class ImageSubscriber(Node):
 
     def update_to_cloud(self):
         url = "{0}/robot".format(self.cloud_url)
+        ipAddress = self.get_ip_address()
 
         jsonRobot = {'name': self.robot_name,
-                     'liveStream': 'rtsp://{0}:8554/robotstream'.format(self.get_ip_address())}
+                     'liveStream': 'http://localhost:8888/{0}/stream.m3u8'.format(self.robot_name),
+                     'rtspStream': 'rtsp://{0}:8554/robotstream'.format(ipAddress)}
 
         try:
             response = requests.put(url, json=jsonRobot, timeout=10)
