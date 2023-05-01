@@ -45,7 +45,7 @@ class GamepadTwist(Node):
 
         # publisher initialization
         self.publisher_ = self.create_publisher(Twist, publish_topic, 1)
-        self.publisher2 = self.create_publisher(String, '/trigger', 2)
+        self.publisher2 = self.create_publisher(String, '/trigger', 1)
         self.timer = self.create_timer(1 / publish_frequency, self.timer_callback)
 
         # variable initialization
@@ -94,7 +94,12 @@ class GamepadTwist(Node):
                     msg = String()
                     msg.data = 'pressed'
                     self.publisher2.publish(msg)
-                    self.get_logger().info(" [] Button pressed")
+                    self.get_logger().info(" [0 - Square] Button pressed")
+                if event.button == 9:
+                    self.get_logger().info(" [9 - Options] Button pressed")
+                    msg = String()
+                    msg.data = 'register'
+                    self.publisher2.publish(msg)
 
         # Creates Twist message
         twist.angular.z = round(self.z, 1)

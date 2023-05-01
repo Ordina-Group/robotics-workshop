@@ -23,6 +23,7 @@ import datetime
 import requests
 import random
 import string
+import subprocess
 import numpy as np
 from pathlib import Path
 
@@ -30,6 +31,7 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from geometry_msgs.msg import Twist
+from std_msgs.msg import String
 from ament_index_python.packages import get_package_share_directory
 
 # Global Variables:
@@ -38,112 +40,80 @@ SETTINGS = os.path.join(get_package_share_directory('ros2_save_camera_image'), "
 
 # Classes
 class ImageSubscriber(Node):
-    """Image Saving Class.
 
-    This class contains all methods to save annotated images.
-
-    """
-
-    def __init__(self, azure_url, azure_code, robot_name, image_folder, image_topic='/image', twist_topic='/cmd_vel'):
+    def __init__(self, cloud_url, robot_name, image_topic='/image', twist_topic='/cmd_vel'):
         super().__init__('image_subscriber')
 
-        # image topic subscriber initialization
-        self.subscription1 = self.create_subscription(Image, image_topic, self.listener_callback1, 1)
-        self.subscription1  # prevent unused variable warning
-        self.image_count = 0
-
-        # twist topic subscriber initialization
-        self.subscription2 = self.create_subscription(Twist, twist_topic, self.listener_callback2, 1)
-        self.subscription2
+        self.subscription = self.create_subscription(
+            String,
+            '/trigger',
+            self.manual_update,
+            1)
 
         # variable initialization
-        self.image_folder = image_folder
-        self.azure_url = azure_url
-        self.azure_code = azure_code
+        self.cloud_url = cloud_url
         self.robot_name = robot_name
-        self.x = 0
-        self.z = 0
 
-    def get_random_string(self, length):
-        letters = string.ascii_lowercase
-        result_str = ''.join(random.choice(letters) for i in range(length))
-        return result_str
+        self.register_to_cloud()
 
-    def listener_callback1(self, msg):
-        """Listener Callback Function 1
 
-        This method collects data from image topic and saves them.
+    def register_to_cloud(self):
+        url = "{0}/robot".format(self.cloud_url)
+        ipAddress = self.get_ip_address()
 
-        """
+        jsonRobot = {'name': self.robot_name,
+                     'liveStream': 'http://localhost:8888/{0}/stream.m3u8'.format(self.robot_name),
+                     'rtspStream': 'rtsp://{0}:8554/robotstream'.format(ipAddress)}
 
-        # parse image data from subscribed topic
-        height = msg.height
-        width = msg.width
-        channel = msg.step // msg.width
-        frame = np.reshape(msg.data, (height, width, channel))
-        self.get_logger().info("Image Received")
+        try:
+            response = requests.post(url, json=jsonRobot, timeout=10)
+            self.get_logger().info("Status code: " + str(response.status_code))
+        except Exception as e:
+            self.get_logger().info("Back-end couldn't be reached: ")
 
-        image_name = self.get_random_string(12) + '.jpg'
 
-        url = "{0}?code={1}&robotName={2}&liveStream=0.0.0.0".format(self.azure_url, self.azure_code, self.robot_name)
+    def update_to_cloud(self):
+        url = "{0}/robot".format(self.cloud_url)
+        ipAddress = self.get_ip_address()
 
-        cv2.imwrite(os.path.join(self.image_folder, image_name), frame)
+        jsonRobot = {'name': self.robot_name,
+                     'liveStream': 'http://localhost:8888/{0}/stream.m3u8'.format(self.robot_name),
+                     'rtspStream': 'rtsp://{0}:8554/robotstream'.format(ipAddress)}
 
-        files = {'F': (image_name, open(self.image_folder + '/' + image_name, "rb"), 'image/jpeg')}
+        try:
+            response = requests.put(url, json=jsonRobot, timeout=10)
+            self.get_logger().info("Status code: " + str(response.status_code))
+        except Exception as e:
+            self.get_logger().info("Back-end couldn't be reached: ")
+        
 
-        response = requests.post(url, files=files)
+    def get_ip_address(self):
+        cmd = "ifconfig %s | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'" % 'wlan0'
+        return subprocess.check_output(cmd, shell=True).decode('ascii')[:-1]
+    
 
-        self.get_logger().info(str(response.status_code))
-        self.get_logger().info("Photo send to cloud")
-
-        self.image_count += 1
-
-        os.remove(os.path.join(self.image_folder, image_name))
-
-    def listener_callback2(self, msg):
-        """Listener Callback Function 1
-
-        This method collects data from geometry twist message topic.
-
-        """
-
-        # parse geometry twist data from subscribed topic
-        self.x = int(msg.linear.x * 5) + 5
-        self.z = int(msg.angular.z * 5) + 5
+    def manual_update(self, msg):
+        if msg.data == 'register':
+            self.update_to_cloud()
 
 
 # Main Method:
 def main(args=None):
-    """This is the Main Method.
 
-    """
-
-    # parse settings from json file
     with open(SETTINGS) as fp:
         content = json.load(fp)
         image_topic = content["image_topic"]
         twist_topic = content["twist_topic"]
-        data_directory = content["data_directory"]
-        azure_url = content["azure_url"]
-        azure_code = content["azure_code"]
+        cloud_url = content["cloud_url"]
         robot_name = content["robot_name"]
-
-    # set directory for saving images
-    image_folder = os.path.join(data_directory,
-                                '{0:04d}_{1:02d}_{2:02d}_{3:02d}_{4:02d}'.format(datetime.datetime.now().year,
-                                                                                 datetime.datetime.now().month,
-                                                                                 datetime.datetime.now().day,
-                                                                                 datetime.datetime.now().hour,
-                                                                                 datetime.datetime.now().minute))
-    Path(image_folder).mkdir(parents=True, exist_ok=True)
 
     # initializes node and save annotated images
     rclpy.init(args=args)
-    image_subscriber = ImageSubscriber(azure_url, azure_code, robot_name, image_folder, image_topic, twist_topic)
-    rclpy.spin(image_subscriber)
+    cloud_subscriber = ImageSubscriber(cloud_url, robot_name, image_topic, twist_topic)
+    rclpy.spin(cloud_subscriber)
 
     # shuts down and releases everything
-    image_subscriber.destroy_node()
+    cloud_subscriber.destroy_node()
     rclpy.shutdown()
 
 
