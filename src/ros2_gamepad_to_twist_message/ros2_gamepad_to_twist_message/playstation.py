@@ -53,6 +53,7 @@ class GamepadTwist(Node):
         self.max_x = 1
         self.z = 0.0
         self.x = 0.0
+        self.joysticks = {}
 
     def neg_n(self, x):
         """ Toggle value from - to +, or + to -. """
@@ -69,8 +70,16 @@ class GamepadTwist(Node):
         # initializes Twist message
         twist = Twist()
 
-        # retrieve any events from the controller
         for event in controller.event.get():
+            if event.type == controller.JOYDEVICEADDED:
+                joy = controller.joystick.Joystick(event.device_index)
+                self.joysticks[joy.get_instance_id()] = joy
+                self.get_logger().info(f"Joystick {joy.get_instance_id()} connencted")
+
+            if event.type == controller.JOYDEVICEREMOVED:
+                del self.joysticks[event.instance_id]
+                self.get_logger().info(f"Joystick {event.instance_id} disconnected")
+
             if event.type == controller.JOYAXISMOTION:
                 self.get_logger().info(f"Event axis: {event.axis}")
                 # Move Forward and Backward
@@ -111,7 +120,6 @@ def main(args=None):
     """
     controller.init()
     controller.joystick.init()
-    joysticks = [controller.joystick.Joystick(x) for x in range(controller.joystick.get_count())]
 
     # parse settings from json file
     with open(SETTINGS) as fp:
