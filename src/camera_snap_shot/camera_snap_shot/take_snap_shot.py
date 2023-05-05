@@ -21,6 +21,7 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from ament_index_python.packages import get_package_share_directory
 from std_msgs.msg import String
+from cv_bridge import CvBridge, CvBridgeError
 
 # ___Global Variables:
 SETTINGS = os.path.join(get_package_share_directory('camera_snap_shot'), "config/camera_snap_shot_settings.json")
@@ -39,7 +40,7 @@ def gstreamer_pipeline(capture_width=json_settings["capture_width"],
     """
 
     return (
-            "nvarguscamerasrc ! "
+            "nvarguscamerasrc sensor-id=0 sensor-mode=2 ! "
             "video/x-raw(memory:NVMM), "
             "width=(int)%d, height=(int)%d, "
             "format=(string)NV12, framerate=(fraction)%d/1 ! "
@@ -63,11 +64,15 @@ class CameraPublisher(Node):
         super().__init__('camera_publisher')
 
         # initialize publisher
-        self.publisher_ = self.create_publisher(Image, publish_topic, publish_frequency)
+        self.publisher_ = self.create_publisher(Image, publish_topic, 1)
         self.subscription1 = self.create_subscription(String, trigger_topic, self.listener_callback1, 1)
 
         # set image counter
         self.i = 0
+        # self.cap = cv2.VideoCapture(gstreamer_pipeline(1920, 1080,
+        #                                     1920, 1080,
+        #                                     30, 0, ), cv2.CAP_GSTREAMER)
+        self.bridge = CvBridge()
 
     def listener_callback1(self, msg):
         """Timer Callback Function
@@ -75,9 +80,7 @@ class CameraPublisher(Node):
         This method captures images and publishes required data in ros 2 topic.
         
         """
-        cap = cv2.VideoCapture(gstreamer_pipeline(1920, 1080,
-                                                  1920, 1080,
-                                                  30, 0, ), cv2.CAP_GSTREAMER)
+        cap = cv2.VideoCapture("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=(int)1920, height=(int)1080, format=(string)NV12, framerate=(fraction)30/1 ! nvvidconv ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink")
 
         if cap.isOpened():
             # reads image data
@@ -95,13 +98,17 @@ class CameraPublisher(Node):
             msg_image.data = np.array(frame).tobytes()
 
             if msg.data == json_settings["camera_trigger_message"]:
+                cv2.imwrite(f"snapshot_files/image{self.i}.jpg", frame)
+
                 # publishes message
+                # self.publisher_.publish(self.bridge.cv2_to_imgmsg(frame, "bgr8"))
                 self.publisher_.publish(msg_image)
-                self.get_logger().info('%d Images Published' % self.i)
+
+                self.get_logger().info(f'image saved at image{self.i}.jpg')
                 cap.release()
 
-        # image counter increment
-        self.i += 1
+            # image counter increment
+            self.i += 1
 
         return None
 
@@ -133,7 +140,3 @@ def main(args=None):
 # ___Driver Program:
 if __name__ == '__main__':
     main()
-
-#
-# end of file
-"""ORDINA"""
