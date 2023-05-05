@@ -2,12 +2,10 @@
 # -*- coding: utf-8 -*-
 
 """ROS2 CSI Camera Image Publisher.
-This script publishes csi camera image to a ROS2 topic in sensor_msgs.msg/Image 
-format. And starts rtmp stream to rtmp://localhost;1935/live/stream
+This script publishes csi camera image to a ROS2 topic in sensor_msgs.msg/Image format.
 Example:
-        $ colcon build --symlink-install && source install/local_setup.bash && ros2 run ros2_csi_camera_publish jetson
-        $ source install/local_setup.bash && ros2 run ros2_csi_camera_publish jetson
-        $ ros2 run ros2_csi_camera_publish jetson
+        $ colcon build --symlink-install
+        $ ros2 launch camera_snap_shot camera_snap_shot.launch.py
 """
 
 # ___Import Modules:
@@ -21,7 +19,6 @@ from rclpy.node import Node
 from sensor_msgs.msg import Image
 from ament_index_python.packages import get_package_share_directory
 from std_msgs.msg import String
-from cv_bridge import CvBridge, CvBridgeError
 
 # ___Global Variables:
 SETTINGS = os.path.join(get_package_share_directory('camera_snap_shot'), "config/camera_snap_shot_settings.json")
@@ -29,26 +26,19 @@ with open(SETTINGS) as fp:
     json_settings = json.load(fp)
 
 # __Functions:
-def gstreamer_pipeline(capture_width=json_settings["capture_width"],
-                       capture_height=json_settings["capture_height"],
-                       display_width=json_settings["display_width"],
-                       display_height=json_settings["display_height"],
-                       framerate=json_settings["framerate"],
-                       flip_method=json_settings["flip_method"]):
-    """Copyright (c) 2019 JetsonHacks
-    
-    """
-
+def gstreamer_pipeline(capture_width=str(json_settings["capture_width"]),
+                       capture_height=str(json_settings["capture_height"]),
+                       framerate=str(json_settings["framerate"])):
     return (
-            "nvarguscamerasrc sensor-id=0 sensor-mode=2 ! "
-            "video/x-raw(memory:NVMM), "
-            "width=(int)%d, height=(int)%d, "
-            "format=(string)NV12, framerate=(fraction)%d/1 ! "
-            "nvvidconv flip-method=%d ! "
-            "video/x-raw, width=(int)%d, height=(int)%d, format=(string)BGRx ! "
-            "videoconvert ! "
-            "video/x-raw, format=(string)BGR ! appsink"
-            % (capture_width, capture_height, framerate, flip_method, display_width, display_height)
+        "nvarguscamerasrc ! "
+        "video/x-raw(memory:NVMM), "
+        f"width=(int){capture_width}, height=(int){capture_height}, "
+        f"format=(string)NV12, framerate=(fraction){framerate}/1 ! "
+        "nvvidconv ! "
+        "video/x-raw, format=(string)BGRx ! "
+        "videoconvert ! "
+        "video/x-raw, format=(string)BGR ! "
+        "appsink"
     )
 
 
@@ -60,7 +50,7 @@ class CameraPublisher(Node):
     
     """
 
-    def __init__(self, publish_topic='/image', trigger_topic='/trigger', publish_frequency=10):
+    def __init__(self, publish_topic=json_settings["publish_topic"], trigger_topic=json_settings["trigger_topic"]):
         super().__init__('camera_publisher')
 
         # initialize publisher
@@ -68,11 +58,7 @@ class CameraPublisher(Node):
         self.subscription1 = self.create_subscription(String, trigger_topic, self.listener_callback1, 1)
 
         # set image counter
-        self.i = 0
-        # self.cap = cv2.VideoCapture(gstreamer_pipeline(1920, 1080,
-        #                                     1920, 1080,
-        #                                     30, 0, ), cv2.CAP_GSTREAMER)
-        self.bridge = CvBridge()
+        self.image_number = 0
 
     def listener_callback1(self, msg):
         """Timer Callback Function
@@ -80,7 +66,7 @@ class CameraPublisher(Node):
         This method captures images and publishes required data in ros 2 topic.
         
         """
-        cap = cv2.VideoCapture("nvarguscamerasrc ! video/x-raw(memory:NVMM), width=(int)1920, height=(int)1080, format=(string)NV12, framerate=(fraction)30/1 ! nvvidconv ! video/x-raw, format=(string)BGRx ! videoconvert ! video/x-raw, format=(string)BGR ! appsink")
+        cap = cv2.VideoCapture(gstreamer_pipeline())
 
         if cap.isOpened():
             # reads image data
@@ -89,45 +75,41 @@ class CameraPublisher(Node):
             # processes image data and converts to ros 2 message
             msg_image = Image()
             msg_image.header.stamp = Node.get_clock(self).now().to_msg()
-            msg_image.header.frame_id = str(self.i)
+            msg_image.header.frame_id = str(self.image_number)
             msg_image.height = np.shape(frame)[0]
             msg_image.width = np.shape(frame)[1]
             msg_image.encoding = "bgr8"
             msg_image.is_bigendian = False
             msg_image.step = np.shape(frame)[2] * np.shape(frame)[1]
             msg_image.data = np.array(frame).tobytes()
-
+            
+            # if message is correct, publish & save image
             if msg.data == json_settings["camera_trigger_message"]:
-                cv2.imwrite(f"snapshot_files/image{self.i}.jpg", frame)
-
-                # publishes message
-                # self.publisher_.publish(self.bridge.cv2_to_imgmsg(frame, "bgr8"))
+                image_location = f"{json_settings['image_location']}/image{self.image_number}.jpg"
+                cv2.imwrite(image_location, frame)
                 self.publisher_.publish(msg_image)
-
-                self.get_logger().info(f'image saved at image{self.i}.jpg')
+                self.get_logger().info(f'image saved at image{self.image_number}.jpg')
                 cap.release()
-
             # image counter increment
-            self.i += 1
+            self.image_number += 1
+            if self.image_number >4:
+                item_to_delete = f"{json_settings['image_location']}/image{self.image_number-5}.jpg"
+                if os.path.exists(item_to_delete):
+                    os.remove(item_to_delete)
+                
 
         return None
 
 
 # ___Main Method:
 def main(args=None):
-    """This is the Main Method.
-    
     """
+    This is the Main Method.
 
-    # parse settings from json file
-
+    """
     # initializes node and start publishing
     rclpy.init(args=args)
-    camera_publisher = CameraPublisher(
-        json_settings["publish_topic"],
-        json_settings["trigger_topic"],
-        json_settings["publish_frequency"]
-    )
+    camera_publisher = CameraPublisher()
     rclpy.spin(camera_publisher)
 
     # shuts down nose and releases everything

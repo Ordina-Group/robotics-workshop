@@ -8,5 +8,6 @@
     "display_width": 320,
     "display_height": 240,
     "trigger_topic": "/camera_trigger",
-    "camera_trigger_message": "pressed"
+    "camera_trigger_message": "pressed",
+    "image_location": "snapshot_files"
 }
