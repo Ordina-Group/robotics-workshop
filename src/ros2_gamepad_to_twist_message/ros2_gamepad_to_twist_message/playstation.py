@@ -74,7 +74,7 @@ class GamepadTwist(Node):
             if event.type == controller.JOYDEVICEADDED:
                 joy = controller.joystick.Joystick(event.device_index)
                 self.joysticks[joy.get_instance_id()] = joy
-                self.get_logger().info(f"Joystick {joy.get_instance_id()} connencted")
+                self.get_logger().info(f"Joystick {joy.get_instance_id()} connected")
 
             if event.type == controller.JOYDEVICEREMOVED:
                 del self.joysticks[event.instance_id]
