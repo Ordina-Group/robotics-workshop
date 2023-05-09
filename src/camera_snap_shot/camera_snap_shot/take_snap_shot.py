@@ -55,12 +55,12 @@ class CameraPublisher(Node):
 
         # initialize publisher
         self.publisher_ = self.create_publisher(Image, publish_topic, 1)
-        self.subscription1 = self.create_subscription(String, trigger_topic, self.listener_callback1, 1)
+        self.subscription1 = self.create_subscription(String, trigger_topic, self.capture_image, 1)
 
         # set image counter
         self.image_number = 0
 
-    def listener_callback1(self, msg):
+    def capture_image(self, msg):
         """Timer Callback Function
         
         This method captures images and publishes required data in ros 2 topic.
