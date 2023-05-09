@@ -1,0 +1,8 @@
+{
+    "publish_topic": "/livestream",
+    "capture_width": 720,
+    "capture_height": 480,
+    "framerate": 30,
+    "flip_method": 0,
+    "trigger_topic": "/livestream_trigger"
+}
