@@ -44,8 +44,8 @@ class GamepadTwist(Node):
         super().__init__('gamepad_publisher')
 
         # publisher initialization
-        self.publisher_ = self.create_publisher(Twist, publish_topic, 1)
-        self.publisher2 = self.create_publisher(String, '/trigger', 1)
+        self.pub_joystick = self.create_publisher(Twist, publish_topic, 1)
+        self.pub_camera_trigger = self.create_publisher(String, '/camera_trigger', 2)
         self.timer = self.create_timer(1 / publish_frequency, self.timer_callback)
 
         # variable initialization
@@ -93,20 +93,20 @@ class GamepadTwist(Node):
                 if event.button == 0:
                     msg = String()
                     msg.data = 'pressed'
-                    self.publisher2.publish(msg)
+                    self.pub_camera_trigger.publish(msg)
                     self.get_logger().info(" [0 - Square] Button pressed")
                 if event.button == 9:
                     self.get_logger().info(" [9 - Options] Button pressed")
                     msg = String()
                     msg.data = 'register'
-                    self.publisher2.publish(msg)
+                    self.pub_camera_trigger.publish(msg)
 
         # Creates Twist message
         twist.angular.z = round(self.z, 1)
         twist.linear.x = round(self.x, 1)
 
         # Publishes message
-        self.publisher_.publish(twist)
+        self.pub_joystick.publish(twist)
 
         return None
 
