@@ -93,12 +93,6 @@ class GamepadTwist(Node):
                
             if event.type == controller.JOYBUTTONDOWN:
                 if event.button == 0:
-                    #make sure no camera livestream is running
-                    # msg = Bool()
-                    # msg.data = False
-                    # self.pub_camera_livestream.publish(msg)
-                    # self.get_logger().info(" [2 - O] Button pressed")
-                    #make picutre
                     msg = Bool()
                     msg.data = True
                     self.pub_camera_trigger.publish(msg)

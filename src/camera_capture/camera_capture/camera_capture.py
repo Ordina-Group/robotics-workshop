@@ -18,8 +18,10 @@ import rclpy
 from rclpy.node import Node
 from sensor_msgs.msg import Image
 from ament_index_python.packages import get_package_share_directory
-from std_msgs.msg import String, Bool
+from std_msgs.msg import Bool
 from cv_bridge import CvBridge
+import ffmpeg_streaming
+import subprocess
 
 
 # ___Global Variables:
@@ -74,13 +76,29 @@ class CameraPublisher(Node):
         # set image counter
         self.image_number = 0
 
+    def hsl_livestream(self,video_width,video_height):
+        ffmpeg_command = [
+            'ffmpeg',
+            '-y',  # Overschrijf uitvoerbestanden zonder bevestiging
+            '-f', 'rawvideo',
+            '-vcodec', 'rawvideo',
+            '-s', f'{video_width}x{video_height}',
+            '-pix_fmt', 'bgr24',
+            '-r', str(30),
+            '-i', '-',
+            '-f', 'mpegts',
+            'udp://localhost:1234'  # Doel-URL voor de FFmpeg-stream
+        ]
+        self.ffmpeg_process = subprocess.Popen(ffmpeg_command, stdin=subprocess.PIPE)
+
     def convert_livestream(self, topic_msg):
         """
-        get a Image() type message and converts it to a cv2 image with cv2.imshow()
+        host livestream on localhost:1935/live/test with cv2 and ffmpeg
         """
-        # self._logger.info(f'message received on topic livestream \nwith message: {topic_msg}\nwith data :{topic_msg.data}')
-        cv2.imshow("Video Frame", self.bridge.imgmsg_to_cv2(topic_msg, "bgr8"))
-        cv2.waitKey(1)
+        frame = self.bridge.imgmsg_to_cv2(topic_msg, "bgr8")
+        self.ffmpeg_process.stdin.write(frame.tobytes())
+        # stream =cv2.imencode('.jpg', self.bridge.imgmsg_to_cv2(topic_msg, "bgr8"))[1].tobytes()
+        # ffmpeg_streaming.input(stream,input=".jpg").output('rtmp://localhost:1935/live/test').run()
 
 
     def start_livestream_callback(self, topic_msg):
@@ -98,6 +116,7 @@ class CameraPublisher(Node):
             self.get_logger().info('camera is available')
             if topic_msg.data == True:
                 self._logger.info('starting livestream')
+                self.hsl_livestream(json_settings["capture_width_livestream"], json_settings["capture_height_livestream"])
                 self.timer = self.create_timer(timer_period, self.timer_callback)
             elif topic_msg.data == False:
                 self._logger.info('stopping livestream')
