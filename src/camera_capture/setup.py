@@ -44,6 +44,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            'camera_capture = camera_capture.camera_capture:main'
         ],
     },
 )

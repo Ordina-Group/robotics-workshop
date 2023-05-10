@@ -30,7 +30,6 @@ def generate_launch_description() -> LaunchDescription:
             package='camera_capture',
             executable='camera_capture',
             name='sim',
-            parameters=[]
         )
 
     return LaunchDescription([

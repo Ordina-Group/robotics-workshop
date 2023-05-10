@@ -3,11 +3,14 @@
 <package format="3">
   <name>camera_capture</name>
   <version>1.0.0</version>
-  <description>camera_capture to make snapshots & livestreams</description>
+  <description>camera_capture to make snapshots and livestreams</description>
   <maintainer email="raymond.houwing@ordina.nl">raymond houwing</maintainer>
   <license>MIT License</license>
 
   <depend>ament_index_python</depend>
+  <depend>rclpy</depend>
+  <depend>sensor_msgs</depend>
+  <depend>cv_bridge</depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>

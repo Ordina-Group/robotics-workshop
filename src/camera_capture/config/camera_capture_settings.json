@@ -1,14 +1,14 @@
 {
     "publish_topic_camera": "/camera",
-    "camera_id": "/0",
+    "camera_id": "/cam_0",
     "publish_topic_livestream": "/livestream",
     "publish_topic_snapshot": "/snapshot",
     "trigger_topic_livestream": "/state",
     "trigger_topic_snapshot": "/trigger",
     "capture_width_livestream": 720,
     "capture_height_livestream": 480,
-    "capture_width_snapshot": 1080,
-    "capture_height_snapshot": 1920,
+    "capture_width_snapshot": 1920,
+    "capture_height_snapshot": 1080,
     "framerate": 30,
     "image_location": "snapshot_files"
 
