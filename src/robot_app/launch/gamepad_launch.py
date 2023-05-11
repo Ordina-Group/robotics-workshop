@@ -18,11 +18,14 @@ Example:
 
 #___Import Modules:
 from launch import LaunchDescription
+import pathlib
 # from launch.conditions import IfCondition
+from ament_index_python.packages import get_package_share_directory
 from launch.conditions import LaunchConfigurationEquals
-from launch.actions import DeclareLaunchArgument
+from launch.actions import DeclareLaunchArgument, IncludeLaunchDescription
 from launch.substitutions import LaunchConfiguration
 from launch_ros.actions import Node
+from launch.launch_description_sources import PythonLaunchDescriptionSource
 
 
 #___Function:
@@ -69,6 +72,13 @@ def generate_launch_description():
         executable = 'camera_capture',
         name = 'camera_capture')
 
+    # Include other launch files
+    HSL_launch = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            str(pathlib.Path(f"{get_package_share_directory('ros_to_livestream')}/launch/HSL.launch.py"))
+        ),
+    )
+
     # snapshot_mode_cmd = Node(
     #     condition = LaunchConfigurationEquals('robot_mode', 'snapshot'),
     #     package = 'camera_snap_shot',
@@ -111,6 +121,7 @@ def generate_launch_description():
     # Add all actions
     ld.add_action(gamepad_to_twist_cmd)
     ld.add_action(livestream_mode_cmd)
+    ld.add_action(HSL_launch)
     # ld.add_action(snapshot_mode_cmd)
     ld.add_action(twist_to_motion_cmd)
     # ld.add_action(cam2image_cmd)

@@ -67,7 +67,6 @@ class CameraPublisher(Node):
         self.pub_cam_livestream = self.create_publisher(Image, publish_livestream_topic, 1)
         self.sub_cam_livestream_state = self.create_subscription(Bool, livestream_state_topic, self.start_livestream_callback, 1)
         self.sub_cam_snapshot_trigger = self.create_subscription(Bool, snapshot_trigger_topic, self.capture_snapshot_callback, 1)
-        self.sub_cam_livestream_convert = self.create_subscription(Image, publish_livestream_topic, self.convert_livestream, 10)
 
         self.cap = cv2.VideoCapture(gstreamer_pipeline())
         self.bridge = CvBridge()
@@ -76,53 +75,25 @@ class CameraPublisher(Node):
         # set image counter
         self.image_number = 0
 
-    def hsl_livestream(self,video_width,video_height):
-        ffmpeg_command = [
-            'ffmpeg',
-            '-y',  # Overschrijf uitvoerbestanden zonder bevestiging
-            '-f', 'rawvideo',
-            '-vcodec', 'rawvideo',
-            '-s', f'{video_width}x{video_height}',
-            '-pix_fmt', 'bgr24',
-            '-r', str(30),
-            '-i', '-',
-            '-f', 'mpegts',
-            'udp://localhost:1234'  # Doel-URL voor de FFmpeg-stream
-        ]
-        self.ffmpeg_process = subprocess.Popen(ffmpeg_command, stdin=subprocess.PIPE)
-
-    def convert_livestream(self, topic_msg):
-        """
-        host livestream on localhost:1935/live/test with cv2 and ffmpeg
-        """
-        frame = self.bridge.imgmsg_to_cv2(topic_msg, "bgr8")
-        self.ffmpeg_process.stdin.write(frame.tobytes())
-        # stream =cv2.imencode('.jpg', self.bridge.imgmsg_to_cv2(topic_msg, "bgr8"))[1].tobytes()
-        # ffmpeg_streaming.input(stream,input=".jpg").output('rtmp://localhost:1935/live/test').run()
-
-
     def start_livestream_callback(self, topic_msg):
         """Timer Callback Function
         
         This method starts a livestream
         
         """
-        os.environ['DISPLAY']=':0' # for developing, this is needed to open up a window to show the local livestream
         self.cap.set(cv2.CAP_PROP_FRAME_HEIGHT, json_settings["capture_height_livestream"])
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_livestream"])
         self._logger.info(f'message received on topic livestream \nwith message: {topic_msg}\nwith data :{topic_msg.data}')
-        timer_period = 0.03  # seconds
+        timer_period = 0.03  # seconds TODO: make into settings 30hz
         if self.cap.isOpened():
             self.get_logger().info('camera is available')
             if topic_msg.data == True:
                 self._logger.info('starting livestream')
-                self.hsl_livestream(json_settings["capture_width_livestream"], json_settings["capture_height_livestream"])
                 self.timer = self.create_timer(timer_period, self.timer_callback)
             elif topic_msg.data == False:
                 self._logger.info('stopping livestream')
                 self.timer.cancel()
                 self.timer.destroy()
-                cv2.destroyAllWindows()
         else:
             self.get_logger().info('camera not available')
 

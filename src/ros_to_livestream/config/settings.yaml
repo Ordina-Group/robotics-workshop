@@ -1,0 +1,14 @@
+
+livestream_topic:
+  base: "/camera"
+  camera_id:
+    - "id_0"
+  type: "/livestream"
+  state: "/state"
+temp_topic: /temp
+image_width: 720
+image_height: 480
+queue_size: 10
+framerate: 30
+
+
