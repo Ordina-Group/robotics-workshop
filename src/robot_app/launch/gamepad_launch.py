@@ -53,13 +53,6 @@ def generate_launch_description():
         default_value='jetbot',
         description='Type of Robot to drive.')
 
-    # Specify the actions
-    # livestream_mode_cmd = Node(
-    #     condition = LaunchConfigurationEquals('robot_mode', 'livestream'),
-    #     package = 'camera_capture',
-    #     executable = 'camera_capture',
-    #     name = 'camera_capture')
-
     # Include other launch files
     HSL_launch = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
