@@ -42,7 +42,7 @@ class CameraPublisher(Node):
         try:
             subprocess.Popen(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(self.get_ip_address())], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         except Exception as e:
-            print("failed to set up rtsp server error :\n {e}")
+            self.get_logger.info("failed to set up rtsp server error :\n {e}")
 
 
     def get_ip_address(self):

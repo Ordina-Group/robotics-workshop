@@ -63,6 +63,11 @@ ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py game
 ```
 sudo apt-get install libgstrtspserver-1.0 libgstreamer1.0-dev
 ```
+And inside the folder you have to give execute rights to a certain file:
+```
+cd ~/robotics-workshop
+sudo chmod +x host_rtsp_server
+```
 
 ## Acknowledgement
 [Jetbot](https://jetbot.org/master/)<br/>
