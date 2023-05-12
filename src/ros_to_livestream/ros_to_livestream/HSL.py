@@ -36,46 +36,48 @@ class ExampleSubscriber(ExtendedNode):
         self.image_width: int = self._get_parameter_value("image_width")
         self.image_height: int = self._get_parameter_value("image_height")
 
-        self.fourcc = cv2.VideoWriter_fourcc(*'mp4v')
-        
+        self.fourcc = cv2.VideoWriter_fourcc(*"mp4v")
+
         self.first_time = True
 
         self.get_logger().info(f"topic: {topic}")
         queue_size: int = self._get_parameter_value("queue_size")
-        self.subscription = self.create_subscription(Image, topic, self.listener_callback, queue_size)
-        # self.create_ffmpeg_process(self.image_width,self.image_height)
+        self.subscription = self.create_subscription(
+            Image, topic, self.listener_callback, queue_size
+        )
         self.bridge = CvBridge()
-        os.environ['DISPLAY']=':0' # for developing, this is needed to open up a window to show the local livestream
-        # self.setup_HSL_stream()
-
-
+        # os.environ['DISPLAY']=':0'
 
     def listener_callback(self, msg: Image) -> None:
         """Handle incoming message from subscription."""
-        # self.get_logger().info(f"I heard: {msg.data}")
         frame = self.bridge.imgmsg_to_cv2(msg, "bgr8")
-        self.out = cv2.VideoWriter('livestream/output.mp4', self.fourcc, self.framerate, (self.image_width, self.image_height))
+        self.out = cv2.VideoWriter(
+            "livestream/output.mp4",
+            self.fourcc,
+            self.framerate,
+            (self.image_width, self.image_height),
+        )
         self.out.write(frame)
         self.out.release()
-        cv2.imshow("frame", frame)
-        cv2.waitKey(1)
+        # cv2.imshow("frame", frame)
+        # cv2.waitKey(1)
         if self.first_time:
             self.setup_HSL_stream()
             self.first_time = False
 
-        
-
-
-        
-
     def setup_HSL_stream(self):
         video_file = "livestream/output.mp4"
-        video= ffmpeg_streaming.input(video_file, capture = True, framerate=self.framerate, vcodec="h264", acodec="aac")
+        video = ffmpeg_streaming.input(
+            video_file,
+            capture=True,
+            framerate=self.framerate,
+            vcodec="h264",
+            acodec="aac",
+        )
         hsl = video.hls(Formats.h264())
-        _720p  = Representation(Size(720, 480), Bitrate(overall=497664))
+        _720p = Representation(Size(720, 480), Bitrate(overall=497664))
         hsl.representations(_720p)
-        hsl.output('livestream/hsl.m3u8')
-
+        hsl.output("livestream/hsl.m3u8")
 
 
 def main(args: Optional[list[str]] = None) -> None:

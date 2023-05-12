@@ -65,5 +65,8 @@ About
 
 /venv/
 /.idea/
+.vscode/
 log/
 install/
+livestream/
+snapshot_files/

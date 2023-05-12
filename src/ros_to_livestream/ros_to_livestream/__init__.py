@@ -1,1 +1,1 @@
-PACKAGE_NAME: str = "ros_skeleton"
+PACKAGE_NAME: str = "ros_to_livestream"

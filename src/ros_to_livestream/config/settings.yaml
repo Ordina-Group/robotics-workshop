@@ -1,4 +1,3 @@
-
 livestream_topic:
   base: "/camera"
   camera_id:
