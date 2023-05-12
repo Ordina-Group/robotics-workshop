@@ -34,8 +34,6 @@ def generate_launch_description():
     # Create launch configuration variables
     gamepad_type = LaunchConfiguration('gamepad_type')
     robot_type = LaunchConfiguration('robot_type')
-    # cam2image = LaunchConfiguration('cam2image')
-    # csijetson = LaunchConfiguration('csijetson')
     
     
     # Declare the launch arguments
@@ -54,23 +52,13 @@ def generate_launch_description():
         'robot_type',
         default_value='jetbot',
         description='Type of Robot to drive.')
-    
-    # declare_cam2image_cmd = DeclareLaunchArgument(
-    #     'cam2image',
-    #     default_value='False',
-    #     description='Execute cam2image or not.')
-    
-    # declare_csijetson_cmd = DeclareLaunchArgument(
-    #     'csijetson',
-    #     default_value='True',
-    #     description='Using CSI camera on Jetson Nano or not.')
 
     # Specify the actions
-    livestream_mode_cmd = Node(
-        condition = LaunchConfigurationEquals('robot_mode', 'livestream'),
-        package = 'camera_capture',
-        executable = 'camera_capture',
-        name = 'camera_capture')
+    # livestream_mode_cmd = Node(
+    #     condition = LaunchConfigurationEquals('robot_mode', 'livestream'),
+    #     package = 'camera_capture',
+    #     executable = 'camera_capture',
+    #     name = 'camera_capture')
 
     # Include other launch files
     HSL_launch = IncludeLaunchDescription(
@@ -78,12 +66,11 @@ def generate_launch_description():
             str(pathlib.Path(f"{get_package_share_directory('ros_to_livestream')}/launch/HSL.launch.py"))
         ),
     )
-
-    # snapshot_mode_cmd = Node(
-    #     condition = LaunchConfigurationEquals('robot_mode', 'snapshot'),
-    #     package = 'camera_snap_shot',
-    #     executable = 'take_snap_shot',
-    #     name = 'camera_snap_shot')
+    camera_capture = IncludeLaunchDescription(
+        PythonLaunchDescriptionSource(
+            str(pathlib.Path(f"{get_package_share_directory('camera_capture')}/launch/camera_capture.launch.py"))
+        ),
+    )
 
     gamepad_to_twist_cmd = Node(
         package = 'ros2_gamepad_to_twist_message',
@@ -94,18 +81,6 @@ def generate_launch_description():
         package = 'ros2_twist_message_to_robot_motion',
         executable = robot_type,
         name='twist_to_robot_motion')
-    
-    # cam2image_cmd = Node(
-    #     condition=IfCondition(cam2image),
-    #     package = 'image_tools',
-    #     executable = 'cam2image',
-    #     name='cam2image')
-    
-    # csijetson_cmd = Node(
-    #     condition=IfCondition(csijetson),
-    #     package = 'ros2_csi_camera_publish',
-    #     executable = 'jetson',
-    #     name='csi_camera_publish')
 
         
     # Create the launch description and populate
@@ -115,17 +90,12 @@ def generate_launch_description():
     ld.add_action(declare_gamepad_type_cmd)
     ld.add_action(declare_robot_mode_cmd)
     ld.add_action(declare_robot_type_cmd)
-    # ld.add_action(declare_cam2image_cmd)
-    # ld.add_action(declare_csijetson_cmd)
     
     # Add all actions
     ld.add_action(gamepad_to_twist_cmd)
-    ld.add_action(livestream_mode_cmd)
+    ld.add_action(camera_capture)
     ld.add_action(HSL_launch)
-    # ld.add_action(snapshot_mode_cmd)
     ld.add_action(twist_to_motion_cmd)
-    # ld.add_action(cam2image_cmd)
-    # ld.add_action(csijetson_cmd)
         
     return ld
 

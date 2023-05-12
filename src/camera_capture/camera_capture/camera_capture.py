@@ -104,10 +104,13 @@ class CameraPublisher(Node):
             if topic_msg.data:
                 self.get_logger().info("starting livestream")
                 timer = self.create_timer(timer_period, self.timer_callback)
-            elif not topic_msg.data and timer.is_active():
+            elif not topic_msg.data:
                 self.get_logger().info("stopping livestream")
-                timer.cancel()
-                timer.destroy()
+                try:
+                    timer.cancel()
+                    timer.destroy()
+                except UnboundLocalError:
+                    self.get_logger().error("timer was is not defined)")
             else:
                 self.get_logger().debug(
                     "can't stop livestream because livestream is already stopped"
@@ -135,20 +138,14 @@ class CameraPublisher(Node):
         )
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_snapshot"])
         if self.cap.isOpened():
-            # reads image data
             ret, frame = self.cap.read()
             print(type(frame))
             msg_image = self.bridge.cv2_to_imgmsg(np.array(frame), "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
-            # saves image to folder
             cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", frame)
             self.get_logger().info(f"image saved at image{self.image_counter}.jpg")
-            # post camera snapshot on topic
             self.pub_cam_snapshot.publish(msg_image)
-
-            # self.cap.release()
             self.image_counter += 1
-            # keep max 5 files
             prevent_overflood_image(self.image_counter)
         else:
             self.get_logger().info("camera not available")
