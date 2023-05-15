@@ -33,14 +33,12 @@ with open(SETTINGS) as fp:
 
 # __Functions:
 def gstreamer_pipeline(
-    capture_width: str = str(json_settings["capture_width_livestream"]),
-    capture_height: str = str(json_settings["capture_height_livestream"]),
     framerate: str = str(json_settings["framerate"]),
 ):
     return (
         "nvarguscamerasrc ! "
         "video/x-raw(memory:NVMM), "
-        f"width=(int){capture_width}, height=(int){capture_height}, "
+        f"width=(int){1920}, height=(int){1080}, "
         f"format=(string)NV12, framerate=(fraction){framerate}/1 ! "
         "nvvidconv ! "
         "video/x-raw, format=(string)BGRx ! "
