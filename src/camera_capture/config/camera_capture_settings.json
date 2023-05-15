@@ -9,7 +9,7 @@
     "capture_height_livestream": 480,
     "capture_width_snapshot": 1920,
     "capture_height_snapshot": 1080,
-    "framerate": 30,
+    "framerate": 15,
     "image_location": "snapshot_files"
 
 }
