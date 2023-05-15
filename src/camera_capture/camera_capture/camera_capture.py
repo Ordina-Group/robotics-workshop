@@ -90,9 +90,10 @@ class CameraPublisher(Node):
         self.cap.set(
             cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_livestream"]
         )
+
         self.get_logger().info(f"message received on topic livestream")
         self.get_logger().debug(
-            f"Incomming message on topic livestream \nwith message: {topic_msg}"
+            f"Incoming message on topic livestream \nwith message: {topic_msg}"
         )
         timer_period = 0.03  # seconds TODO: make into settings 30hz
         if self.cap.isOpened():
@@ -111,7 +112,7 @@ class CameraPublisher(Node):
                 self.get_logger().debug(
                     "can't stop livestream because livestream is already stopped"
                 )
-        elif not self.cap.isOpened():
+        else:
             self.get_logger().info("camera not available")
 
     def timer_callback(self):
@@ -132,7 +133,10 @@ class CameraPublisher(Node):
         self.cap.set(
             cv2.CAP_PROP_FRAME_HEIGHT, json_settings["capture_height_snapshot"]
         )
-        self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_snapshot"])
+        self.cap.set(
+            cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_snapshot"]
+        )
+
         if self.cap.isOpened():
             ret, frame = self.cap.read()
             msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
