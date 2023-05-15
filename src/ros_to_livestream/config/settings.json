@@ -1,0 +1,10 @@
+{
+    "topic_camera": "/camera",
+    "camera_id": "/cam_0",
+    "topic_livestream": "/livestream",
+    "image_width": 720,
+    "image_height": 480,
+    "framerate": 33,
+    "queue_size": 10
+
+}

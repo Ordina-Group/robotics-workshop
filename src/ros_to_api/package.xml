@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<?xml-model href="http://download.ros.org/schema/package_format3.xsd" schematypens="http://www.w3.org/2001/XMLSchema"?>
+<package format="3">
+  <name>ros_to_api</name>
+  <version>1.0.0</version>
+  <description>a FastAPI node that hosts, livestreams, pictures, virtual controllers etc.</description>
+  <maintainer email="raymond.houwing@ordina.nl">Raymond Houwing</maintainer>
+  <license>MIT License</license>
+
+  <depend>ament_index_python</depend>
+  <depend>rclpy</depend>
+  <depend>std_msgs</depend>
+  <depend>support</depend>
+  <depend>cv_bridge</depend>
+
+
+  <export>
+    <build_type>ament_python</build_type>
+  </export>
+</package>

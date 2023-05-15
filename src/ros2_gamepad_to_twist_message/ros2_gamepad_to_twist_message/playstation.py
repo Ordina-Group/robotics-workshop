@@ -23,7 +23,7 @@ import rclpy
 from ament_index_python.packages import get_package_share_directory
 from geometry_msgs.msg import Twist
 from rclpy.node import Node
-from std_msgs.msg import String
+from std_msgs.msg import String, Bool
 
 # ___Trick to solve pygame video init error
 os.environ["SDL_VIDEODRIVER"] = "dummy"
@@ -44,8 +44,10 @@ class GamepadTwist(Node):
         super().__init__('gamepad_publisher')
 
         # publisher initialization
-        self.publisher_ = self.create_publisher(Twist, publish_topic, 1)
-        self.publisher2 = self.create_publisher(String, '/trigger', 1)
+        self.pub_joystick = self.create_publisher(Twist, publish_topic, 1)
+        self.pub_camera_trigger = self.create_publisher(Bool, '/camera/cam_0/snapshot/trigger', 2)
+        self.pub_camera_livestream = self.create_publisher(Bool, '/camera/cam_0/livestream/state', 2)
+
         self.timer = self.create_timer(1 / publish_frequency, self.timer_callback)
 
         # variable initialization
@@ -53,7 +55,6 @@ class GamepadTwist(Node):
         self.max_x = 1
         self.z = 0.0
         self.x = 0.0
-        self.joysticks = {}
 
     def neg_n(self, x):
         """ Toggle value from - to +, or + to -. """
@@ -70,16 +71,8 @@ class GamepadTwist(Node):
         # initializes Twist message
         twist = Twist()
 
+        # retrieve any events from the controller
         for event in controller.event.get():
-            if event.type == controller.JOYDEVICEADDED:
-                joy = controller.joystick.Joystick(event.device_index)
-                self.joysticks[joy.get_instance_id()] = joy
-                self.get_logger().info(f"Joystick {joy.get_instance_id()} connected")
-
-            if event.type == controller.JOYDEVICEREMOVED:
-                del self.joysticks[event.instance_id]
-                self.get_logger().info(f"Joystick {event.instance_id} disconnected")
-
             if event.type == controller.JOYAXISMOTION:
                 self.get_logger().info(f"Event axis: {event.axis}")
                 # Move Forward and Backward
@@ -100,22 +93,28 @@ class GamepadTwist(Node):
                
             if event.type == controller.JOYBUTTONDOWN:
                 if event.button == 0:
-                    msg = String()
-                    msg.data = 'pressed'
-                    self.publisher2.publish(msg)
+                    msg = Bool()
+                    msg.data = True
+                    self.pub_camera_trigger.publish(msg)
                     self.get_logger().info(" [0 - Square] Button pressed")
-                if event.button == 9:
-                    self.get_logger().info(" [9 - Options] Button pressed")
-                    msg = String()
-                    msg.data = 'register'
-                    self.publisher2.publish(msg)
+
+                if event.button == 1:
+                    msg = Bool()
+                    msg.data = True
+                    self.pub_camera_livestream.publish(msg)
+                    self.get_logger().info(" [1 - X] Button pressed")
+                if event.button == 2:
+                    msg = Bool()
+                    msg.data = False
+                    self.pub_camera_livestream.publish(msg)
+                    self.get_logger().info(" [2 - O] Button pressed")
 
         # Creates Twist message
         twist.angular.z = round(self.z, 1)
         twist.linear.x = round(self.x, 1)
 
         # Publishes message
-        self.publisher_.publish(twist)
+        self.pub_joystick.publish(twist)
 
         return None
 
@@ -125,6 +124,7 @@ def main(args=None):
     """
     controller.init()
     controller.joystick.init()
+    joysticks = [controller.joystick.Joystick(x) for x in range(controller.joystick.get_count())]
 
     # parse settings from json file
     with open(SETTINGS) as fp:

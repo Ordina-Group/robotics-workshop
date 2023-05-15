@@ -70,8 +70,8 @@ class Twist_to_Motion(Node):
         x = self.x_calibration*float(msg.linear.x)
         z = self.z_calibration*float(msg.angular.z)
         
-        self.get_logger().info("x ={:.1f}".format(x))
-        self.get_logger().info("z ={:.1f}".format(z))
+        # self.get_logger().info("x ={:.1f}".format(x))
+        # self.get_logger().info("z ={:.1f}".format(z))
 
         # control robot movement
         # both wheel same state
