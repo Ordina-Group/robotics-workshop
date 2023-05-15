@@ -20,8 +20,7 @@ from sensor_msgs.msg import Image
 from ament_index_python.packages import get_package_share_directory
 from std_msgs.msg import Bool
 from cv_bridge import CvBridge
-import ffmpeg_streaming
-import subprocess
+
 from . import PACKAGE_NAME
 
 
@@ -36,7 +35,7 @@ with open(SETTINGS) as fp:
 # __Functions:
 def gstreamer_pipeline(
     capture_width: str = str(json_settings["capture_width_livestream"]),
-    capture_height: str = str(json_settings["capture_width_livestream"]),
+    capture_height: str = str(json_settings["capture_height_livestream"]),
     framerate: str = str(json_settings["framerate"]),
 ):
     return (
