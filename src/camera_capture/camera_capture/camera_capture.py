@@ -12,7 +12,6 @@ Example:
 import os
 import cv2
 import json
-import numpy as np
 
 import rclpy
 from rclpy.node import Node
@@ -120,7 +119,7 @@ class CameraPublisher(Node):
     def timer_callback(self):
         """callback function to read image data from camera and publish it to the topic of the livestream"""
         ret, frame = self.cap.read()
-        msg_image = self.bridge.cv2_to_imgmsg(np.array(frame), "bgr8")
+        msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
         self.pub_cam_livestream.publish(msg_image)
 
     def capture_snapshot_callback(self, topic_msg: Bool):
@@ -138,8 +137,7 @@ class CameraPublisher(Node):
         self.cap.set(cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_snapshot"])
         if self.cap.isOpened():
             ret, frame = self.cap.read()
-            print(type(frame))
-            msg_image = self.bridge.cv2_to_imgmsg(np.array(frame), "bgr8")
+            msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
             cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", frame)
             self.get_logger().info(f"image saved at image{self.image_counter}.jpg")
