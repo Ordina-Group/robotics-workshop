@@ -4,6 +4,10 @@ logs/
 build/
 bin/
 lib/
+log/
+install/
+livestream/
+snapshot_files/
 msg_gen/
 srv_gen/
 msg/*Action.msg
@@ -65,3 +69,5 @@ About
 
 /venv/
 /.idea/
+.vscode/
+

@@ -54,8 +54,7 @@ git clone https://github.com/OrdinaNederland/robotics-workshop
 #### Build, Source & Launch Package (Gamepad)
 ```
 cd ~/robotics-workshop
-chmod +x host_rtsp_server
-colcon build --symlink-install && source install/local_setup.bash
+colcon build && source install/local_setup.bash
 ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py gamepad_type:=playstation
 ```
 

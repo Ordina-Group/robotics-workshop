@@ -1,0 +1,1 @@
+PACKAGE_NAME: str = "camera_capture"
