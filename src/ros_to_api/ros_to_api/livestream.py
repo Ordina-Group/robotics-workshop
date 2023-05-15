@@ -25,15 +25,6 @@ from . import PACKAGE_NAME
 
 app = FastAPI()
 
-@app.get( '/listen' ) 
-async  def  publish ():
-    # msg = Image()
-
-    # response  =  {  
-    #     'msg' :  msg.data 
-    # } 
-    return StreamingResponse(node.get_message(), media_type="multipart/x-mixed-replace;boundary=frame")
-    # return  {'data' : next(node.get_message())} 
 
 class ExampleSubscriber(ExtendedNode):
     def __init__(self):
@@ -45,28 +36,34 @@ class ExampleSubscriber(ExtendedNode):
         self.subscription = self.create_subscription(Image, topic, self.listener_callback, queue_size)
         self.bridge = CvBridge()
 
+        @app.get("/livestream")
+        async def publish_livestream():
+            return StreamingResponse(self.get_message(), media_type="multipart/x-mixed-replace;boundary=frame")
+
+        # @app.get("/snapshot")
+        # async def publish_snapshot():
+        #     return StreamingResponse(node.get_message(), media_type="multipart/x-mixed-replace;boundary=frame")
+
     def get_message(self):
-        frame = self.bridge.imgmsg_to_cv2(self.message, "bgr8")
-        (flag, encodedImage) = cv2.imencode(".jpg", frame)
-        yield (b'--frame\r\n' b'Content-Type: image/jpeg\r\n\r\n' +
-               bytearray(encodedImage) + b'\r\n')
-        # yield self.message
-        
+        while True:
+            frame = self.bridge.imgmsg_to_cv2(self.message, "bgr8")
+            (flag, encodedImage) = cv2.imencode(".jpg", frame)
+            yield (b'--frame\r\n'b'Content-Type: image/jpeg\r\n\r\n' +
+                   bytearray(encodedImage) + b'\r\n')
+
     def listener_callback(self, msg: Image) -> None:
         """Handle incoming message from subscription."""
         self.get_logger().info(f"I heard somthing")
         self.message = msg
 
 
-
 def main(args: Optional[list[str]] = None) -> None:
-
-    # rclpy.spin(node)
     spin_thread = threading.Thread(target=rclpy.spin, args=(node,))
     spin_thread.start()
     uvicorn.run(app, host="0.0.0.0", port=8080)
     node.destroy_node()
     rclpy.shutdown()
+
 
 rclpy.init()
 node = ExampleSubscriber()
