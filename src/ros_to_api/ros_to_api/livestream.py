@@ -8,20 +8,18 @@ A callback function is defined, which handles the incoming message.
 
 """
 from __future__ import annotations
+import threading
 from typing import Optional
 
+import cv2
+from cv_bridge import CvBridge
 import rclpy
 from sensor_msgs.msg import Image
 from support.extended_node import ExtendedNode
 from fastapi import FastAPI
 from fastapi.responses import StreamingResponse
-import cv2
-
-from cv_bridge import CvBridge
-
-
 import uvicorn
-import threading
+
 from . import PACKAGE_NAME
 
 
