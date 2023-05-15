@@ -54,11 +54,6 @@ def generate_launch_description():
         description='Type of Robot to drive.')
 
     # Include other launch files
-    HSL_launch = IncludeLaunchDescription(
-        PythonLaunchDescriptionSource(
-            str(pathlib.Path(f"{get_package_share_directory('ros_to_livestream')}/launch/HSL.launch.py"))
-        ),
-    )
     camera_capture = IncludeLaunchDescription(
         PythonLaunchDescriptionSource(
             str(pathlib.Path(f"{get_package_share_directory('camera_capture')}/launch/camera_capture.launch.py"))
@@ -93,7 +88,6 @@ def generate_launch_description():
     ld.add_action(gamepad_to_twist_cmd)
     ld.add_action(camera_capture)
     ld.add_action(ros_to_api)
-    ld.add_action(HSL_launch)
     ld.add_action(twist_to_motion_cmd)
         
     return ld
