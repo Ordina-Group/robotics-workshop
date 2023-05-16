@@ -56,7 +56,7 @@ git clone https://github.com/OrdinaNederland/robotics-workshop
 cd ~/robotics-workshop
 chmod +x host_rtsp_server
 colcon build --symlink-install && source install/local_setup.bash
-ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py gamepad_type:=playstation
+ROS_DOMAIN_ID=<INSERT ROBOT NUMBER> ros2 launch robot_app gamepad_launch.py gamepad_type:=playstation server:=0.0.0.0 name:=Batmobile
 ```
 
 #### first time building (needed for livestream gstreamer):
