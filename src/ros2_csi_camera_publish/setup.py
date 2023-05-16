@@ -12,6 +12,7 @@ setup(
             ['resource/' + package_name]),
         ('share/' + package_name, ['package.xml']),
         ('share/' + package_name, ['settings.json']),
+        ('share/' + package_name + '/launch', glob('launch/*')),
     ],
     install_requires=['setuptools'],
     zip_safe=True,

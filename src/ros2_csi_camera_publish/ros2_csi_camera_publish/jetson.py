@@ -20,6 +20,7 @@ import json
 import numpy as np
 import subprocess 
 import socket
+import requests
 
 import rclpy
 from rclpy.node import Node
@@ -35,6 +36,19 @@ class CameraPublisher(Node):
 
     def __init__(self):
         super().__init__('camera_publisher')
+        server = 'server'
+        name = 'name'
+
+        if not self.has_parameter(server):
+            self.declare_parameter(server)
+
+        if not self.has_parameter(name):
+            self.declare_parameter(name)
+
+        self.server_url = self.get_parameter(server).value
+        self.robot_name = self.get_parameter(name).value
+
+        self.register_to_cloud()
         self.create_livestream()
 
 
@@ -42,12 +56,20 @@ class CameraPublisher(Node):
         try:
             subprocess.Popen(["./host_rtsp_server", "nvarguscamerasrc ! nvvidconv ! nvv4l2h264enc ! h264parse ! rtph264pay name=pay0 pt=96",str(self.get_ip_address())], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
         except Exception as e:
-            self.get_logger.info("failed to set up rtsp server error :\n {e}")
+            self.get_logger().info("failed to set up rtsp server error :\n {e}")
 
 
     def get_ip_address(self):
         cmd = "ifconfig %s | grep -Eo 'inet (addr:)?([0-9]*\.){3}[0-9]*' | grep -Eo '([0-9]*\.){3}[0-9]*' | grep -v '127.0.0.1'" % 'wlan0'
         return subprocess.check_output(cmd, shell=True).decode('ascii')[:-1]
+
+    def register_to_cloud(self):
+        try:
+            requests.post('http://{0}:8080/robot'.format(self.server_url), json={"name": self.robot_name,
+                                                                                "ipAddress": self.get_ip_address()})
+        except Exception as e:
+            self.get_logger().info("Could not register to cloud:\n {0}".format(e))
+
 
 
 # ___Main Method:
