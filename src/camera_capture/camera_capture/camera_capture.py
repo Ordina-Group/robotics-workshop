@@ -97,18 +97,14 @@ class CameraPublisher(Node):
             self.get_logger().info("camera is available")
             if topic_msg.data:
                 self.get_logger().info("starting livestream")
-                timer = self.create_timer(timer_period, self.timer_callback)
-            elif not topic_msg.data:
+                self.timer = self.create_timer(timer_period, self.timer_callback)
+            else:
                 self.get_logger().info("stopping livestream")
                 try:
-                    timer.cancel()
-                    timer.destroy()
+                    self.timer.cancel()
+                    self.timer.destroy()
                 except UnboundLocalError:
                     self.get_logger().error("timer was is not defined)")
-            else:
-                self.get_logger().debug(
-                    "can't stop livestream because livestream is already stopped"
-                )
         else:
             self.get_logger().info("camera not available")
 
