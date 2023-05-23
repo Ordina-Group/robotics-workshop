@@ -130,31 +130,15 @@ class CameraPublisher(Node):
 
 
         if self.cap.isOpened():
+            self.get_logger().info("camera is available")
             # TODO make helper function to check and set correct camera mode.
             ret, frame = self.cap.read()
-            print(f"frame is : {frame}")
             msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
-            cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", frame)
-            self.get_logger().info(f"image saved at image{self.image_counter}.jpg")
             self.pub_cam_snapshot.publish(msg_image)
             self.image_counter += 1
-            prevent_overflood_image(self.image_counter)
         else:
             self.get_logger().info("camera not available")
-
-
-
-def prevent_overflood_image(img_number: int):
-    """makes sure that there are only 5 images in the image folder
-
-    Args:
-        img_number (int): current number of latest image published
-    """
-    if img_number > 4:
-        item_to_delete = f"{json_settings['image_location']}/image{img_number-5}.jpg"
-        if os.path.exists(item_to_delete):
-            os.remove(item_to_delete)
 
 
 # ___Main Method:
