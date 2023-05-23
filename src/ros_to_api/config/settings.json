@@ -1,5 +1,5 @@
 {
-    "subscriber_topic": "/camera/cam_0/livestream",
-    "subscriber_queue_size": 10,
-    "message": "Hello world"
+    "subscriber_topic_livestream": "/camera/cam_0/livestream",
+    "subscriber_topic_snapshot": "/camera/cam_0/snapshot",
+    "subscriber_queue_size": 10
 }

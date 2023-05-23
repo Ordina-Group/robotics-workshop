@@ -34,11 +34,13 @@ with open(SETTINGS) as fp:
 # __Functions:
 def gstreamer_pipeline(
     framerate: str = str(json_settings["framerate"]),
+    capture_width: str = str(json_settings["capture_width_livestream"]),
+    capture_height: str = str(json_settings["capture_height_livestream"]),
 ):
     return (
         "nvarguscamerasrc ! "
         "video/x-raw(memory:NVMM), "
-        f"width=(int){1920}, height=(int){1080}, "
+        f"width=(int){capture_width}, height=(int){capture_height}, "
         f"format=(string)NV12, framerate=(fraction){framerate}/1 ! "
         "nvvidconv ! "
         "video/x-raw, format=(string)BGRx ! "
@@ -84,12 +86,7 @@ class CameraPublisher(Node):
         Args:
         topic_msg (Bool): True for starting livestream, False for stopping livestream
         """
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_HEIGHT, json_settings["capture_height_livestream"]
-        )
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_livestream"]
-        )
+
 
         self.get_logger().info(f"message received on topic livestream")
         self.get_logger().debug(
@@ -130,15 +127,12 @@ class CameraPublisher(Node):
         self.get_logger().info(
             f"message received on topic snapshot \nwith message: {topic_msg}\nwith data :{topic_msg.data}"
         )
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_HEIGHT, json_settings["capture_height_snapshot"]
-        )
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_snapshot"]
-        )
+
 
         if self.cap.isOpened():
+            # TODO make helper function to check and set correct camera mode.
             ret, frame = self.cap.read()
+            print(f"frame is : {frame}")
             msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
             cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", frame)
@@ -148,12 +142,7 @@ class CameraPublisher(Node):
             prevent_overflood_image(self.image_counter)
         else:
             self.get_logger().info("camera not available")
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_HEIGHT, json_settings["capture_height_livestream"]
-        )
-        self.cap.set(
-            cv2.CAP_PROP_FRAME_WIDTH, json_settings["capture_width_livestream"]
-        )
+
 
 
 def prevent_overflood_image(img_number: int):
