@@ -26,6 +26,21 @@ from . import PACKAGE_NAME
 
 app = FastAPI()
 
+@app.get("/livestream")
+async def publish_livestream():
+    node.get_logger().info(f"livestream requested")
+    return StreamingResponse(
+        node.get_message(),
+        media_type="multipart/x-mixed-replace;boundary=frame",
+    )
+
+@app.get("/snapshot/{id}")
+async def publish_snapshot(id: int):
+    node.get_logger().info(f"Snapshot requested: {id}")
+    return StreamingResponse(
+        node.get_image(id),
+        media_type="multipart/x-mixed-replace;boundary=frame",
+    )
 
 class ExampleSubscriber(ExtendedNode):
     def __init__(self):
@@ -43,21 +58,8 @@ class ExampleSubscriber(ExtendedNode):
         )
         self.image_list = [None, None, None, None, None]
         self.bridge = CvBridge()
+        self.livestream_msg = None   
 
-        @app.get("/livestream")
-        async def publish_livestream():
-            return StreamingResponse(
-                self.get_message(),
-                media_type="multipart/x-mixed-replace;boundary=frame",
-            )
-
-        @app.get("/snapshot/{id}")
-        async def publish_snapshot(id: int):
-            self.get_logger().info(f"Snapshot requested: {id}")
-            return StreamingResponse(
-                self.get_image(id),
-                media_type="multipart/x-mixed-replace;boundary=frame",
-            )
 
     async def get_message(self):
         while True:
