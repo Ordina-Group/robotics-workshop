@@ -53,7 +53,7 @@ def gstreamer_pipeline(
 # __Classes:
 class CameraPublisher(Node):
     """this class captures immages from a CSI camera and publishes it as a livestream or snapshots to a topic"""
-
+    # TODO: add cap function separate from timer callback function and snapshot, so that snapshot & livestream can use the same frames.
     def __init__(
         self,
         publish_livestream_topic: str,

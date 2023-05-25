@@ -60,10 +60,10 @@ class ExampleSubscriber(ExtendedNode):
         queue_size: int = self._get_parameter_value("subscriber_queue_size")
         self.message = None
         self.subscription = self.create_subscription(
-            Image, snapshot_topic, self.listener_callback_snapshot, queue_size
+            Image, snapshot_topic, self._listener_callback_snapshot, queue_size
         )
         self.subscription = self.create_subscription(
-            Image, livestream_topic, self.listener_callback_livestream, queue_size
+            Image, livestream_topic, self._listener_callback_livestream, queue_size
         )
         self.image_list = [None, None, None, None, None]
         self.bridge = CvBridge()
