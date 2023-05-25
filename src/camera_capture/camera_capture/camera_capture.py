@@ -75,10 +75,11 @@ class CameraPublisher(Node):
             Bool, snapshot_trigger_topic, self.capture_snapshot_callback, 1
         )
 
-        self.cap = cv2.VideoCapture(gstreamer_pipeline())
+        # self.cap = cv2.VideoCapture(gstreamer_pipeline())
         self.bridge = CvBridge()
         self.image_location = f"{json_settings['image_location']}"
         self.image_counter = 0
+        self.livestream_state = False
 
     def start_livestream_callback(self, topic_msg: Bool):
         """This method starts a livestream when a message is received on the topic livestream/state
@@ -92,14 +93,24 @@ class CameraPublisher(Node):
         self.get_logger().debug(
             f"Incoming message on topic livestream \nwith message: {topic_msg}"
         )
+        if not self.livestream_state:
+            self.cap = cv2.VideoCapture(gstreamer_pipeline())
+        else:
+            self.get_logger().error("camera is already in use (probbaly)")
+        
         timer_period = 0.03  # seconds TODO: make into settings 30hz
         if self.cap.isOpened():
             self.get_logger().info("camera is available")
             if topic_msg.data:
-                self.get_logger().info("starting livestream")
+                self.livestream_state = True
+                self.get_logger().info(f"starting livestream{self.livestream_state}")
+
                 self.timer = self.create_timer(timer_period, self.timer_callback)
+                
             else:
-                self.get_logger().info("stopping livestream")
+                self.livestream_state = False
+                self.get_logger().info(f"stopping livestream{self.livestream_state}")
+                self.cap.release()
                 try:
                     self.timer.cancel()
                     self.timer.destroy()
@@ -123,18 +134,25 @@ class CameraPublisher(Node):
         self.get_logger().info(
             f"message received on topic snapshot \nwith message: {topic_msg}\nwith data :{topic_msg.data}"
         )
+        if not self.livestream_state:
 
-
+            self.cap = cv2.VideoCapture(gstreamer_pipeline())
+        else:
+            self.get_logger().error("camera is already in use (probably)")
+        frame = None
         if self.cap.isOpened():
             self.get_logger().info("camera is available")
             # TODO make helper function to check and set correct camera mode.
-            ret, frame = self.cap.read()
-            msg_image = self.bridge.cv2_to_imgmsg(frame, "bgr8")
+            ret, image = self.cap.read()
+            cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", image)
+            msg_image = self.bridge.cv2_to_imgmsg(image, "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
             self.pub_cam_snapshot.publish(msg_image)
             self.image_counter += 1
         else:
             self.get_logger().info("camera not available")
+        if not self.livestream_state:
+            self.cap.release()
 
 
 # ___Main Method:
