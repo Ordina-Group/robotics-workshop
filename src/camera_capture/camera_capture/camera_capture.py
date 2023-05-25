@@ -88,7 +88,6 @@ class CameraPublisher(Node):
         topic_msg (Bool): True for starting livestream, False for stopping livestream
         """
 
-
         self.get_logger().info(f"message received on topic livestream")
         self.get_logger().debug(
             f"Incoming message on topic livestream \nwith message: {topic_msg}"
@@ -97,7 +96,7 @@ class CameraPublisher(Node):
             self.cap = cv2.VideoCapture(gstreamer_pipeline())
         else:
             self.get_logger().error("camera is already in use (probbaly)")
-        
+
         timer_period = 0.03  # seconds TODO: make into settings 30hz
         if self.cap.isOpened():
             self.get_logger().info("camera is available")
@@ -106,7 +105,7 @@ class CameraPublisher(Node):
                 self.get_logger().info(f"starting livestream{self.livestream_state}")
 
                 self.timer = self.create_timer(timer_period, self.timer_callback)
-                
+
             else:
                 self.livestream_state = False
                 self.get_logger().info(f"stopping livestream{self.livestream_state}")
@@ -135,7 +134,6 @@ class CameraPublisher(Node):
             f"message received on topic snapshot \nwith message: {topic_msg}\nwith data :{topic_msg.data}"
         )
         if not self.livestream_state:
-
             self.cap = cv2.VideoCapture(gstreamer_pipeline())
         else:
             self.get_logger().error("camera is already in use (probably)")
@@ -144,7 +142,6 @@ class CameraPublisher(Node):
             self.get_logger().info("camera is available")
             # TODO make helper function to check and set correct camera mode.
             ret, image = self.cap.read()
-            cv2.imwrite(f"{self.image_location}/image{self.image_counter}.jpg", image)
             msg_image = self.bridge.cv2_to_imgmsg(image, "bgr8")
             msg_image.header.frame_id = str(self.image_counter)
             self.pub_cam_snapshot.publish(msg_image)

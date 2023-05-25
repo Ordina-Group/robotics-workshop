@@ -26,21 +26,30 @@ from . import PACKAGE_NAME
 
 app = FastAPI()
 
+
 @app.get("/livestream")
 async def publish_livestream():
     node.get_logger().info(f"livestream requested")
-    return StreamingResponse(
-        node.get_message(),
-        media_type="multipart/x-mixed-replace;boundary=frame",
-    )
+    if node.livestream_msg:
+        return StreamingResponse(
+            node.get_livestream(),
+            media_type="multipart/x-mixed-replace;boundary=frame",
+        )
+    else:
+        return Response(status_code=404)
+
 
 @app.get("/snapshot/{id}")
 async def publish_snapshot(id: int):
     node.get_logger().info(f"Snapshot requested: {id}")
-    return StreamingResponse(
-        node.get_image(id),
-        media_type="multipart/x-mixed-replace;boundary=frame",
-    )
+    if node.get_image(id):
+        return StreamingResponse(
+            node.get_image(id),
+            media_type="multipart/x-mixed-replace;boundary=frame",
+        )
+    else:
+        return Response(status_code=404)
+
 
 class ExampleSubscriber(ExtendedNode):
     def __init__(self):
@@ -58,10 +67,9 @@ class ExampleSubscriber(ExtendedNode):
         )
         self.image_list = [None, None, None, None, None]
         self.bridge = CvBridge()
-        self.livestream_msg = None   
+        self.livestream_msg = None
 
-
-    async def get_message(self):
+    async def get_livestream(self):
         while True:
             await asyncio.sleep(0.03)
             frame = self.bridge.imgmsg_to_cv2(self.livestream_msg, "bgr8")
@@ -85,15 +93,15 @@ class ExampleSubscriber(ExtendedNode):
         )
         yield image
 
-    def listener_callback_snapshot(self, msg: Image) -> None:
+    def _listener_callback_snapshot(self, msg: Image) -> None:
         """Handle incoming message from subscription."""
-        self.get_logger().info(f"I will upload foto")
+        self.get_logger().info("I will upload the image")
         snapshot_msg = msg
         self.image_list.pop(-1)
         self.image_list.insert(0, snapshot_msg)
-        self.get_logger().info(f"Foto uploaded:")
+        self.get_logger().info("Image uploaded")
 
-    def listener_callback_livestream(self, msg: Image) -> None:
+    def _listener_callback_livestream(self, msg: Image) -> None:
         """Handle incoming message from subscription."""
         self.livestream_msg = msg
 
